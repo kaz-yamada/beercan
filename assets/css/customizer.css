@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 26, 2017, 2:43:26 AM
+    Author     : Kazuki
+*/
+
+.panel-placeholder {
+    position: relative;
+}
+
+.panel-placeholder:after {
+    border: 2px dashed #0085ba; /*  Matches visible edit shortcuts. */
+    bottom: 1em;
+    content: "";
+    display: block;
+    left: 1em;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1;
+}
+
+.beercan-panel .beercan-panel-title {
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 3em;
+    text-transform: uppercase;
+    text-align: center;
+}
