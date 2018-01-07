@@ -1,0 +1,64 @@
+.widget {
+	margin: 0 0 1.5em;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+}
+
+.widget_search {
+	.search-form {
+		position: relative;
+	}
+
+	.search-field {
+		height: 42px;
+		line-height: 1;
+		padding-right: 66px;
+		padding-left: 12px;
+		margin: auto;
+	}
+
+	.search-submit {
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 42px;
+		line-height: 1;
+	}
+}
+
+.widget_recent_entries {
+	@include widget-icon("\f15c");
+}
+
+.widget_archive {
+	@include widget-icon("\f073");
+}
+
+.widget_categories {
+	ul {
+		display: flex;
+		flex-flow: row wrap;
+
+		li {
+			border: solid 1px $light-gray;
+			margin-right: 0.5em;
+			margin-bottom: 0.5em;
+
+			a {
+				padding: 0.4em;
+			}
+		}
+	}
+
+}
+
+.widget_recent_comments {
+	@include widget-icon("\f27b")
+}
+
+.widget_meta {
+	@include widget-icon("\f129");
+}

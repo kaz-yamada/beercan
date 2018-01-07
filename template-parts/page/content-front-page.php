@@ -2,52 +2,40 @@
 /**
  * Displays content for front page
  *
- * @package WordPress
- * @subpackage Beercan
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Beercan
  * @since 1.0
  * @version 1.0
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'beercan-panel ' ); ?> >
+<div class="grid-container grid-padding-x">
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'cell' ); ?>>
+		<div class="entry-content">
+			<?php
+			the_content(
+				sprintf(
+					wp_kses(
+						/* translators: %s: Name of current post. Only visible to screen readers */
+						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'beercan' ), array(
+							'span' => array(
+								'class' => array(),
+							),
+						)
+					), get_the_title()
+				)
+			);
 
-	<?php if ( has_post_thumbnail() ) :
-		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'beercan-featured-image' );
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'beercan' ),
+				'after'  => '</div>',
+			) );
+			?>
+		</div><!-- .entry-content -->
 
-		$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
-
-		$thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'beercan-featured-image' );
-
-		// Calculate aspect ratio: h / w * 100%.
-		$ratio = $thumbnail_attributes[2] / $thumbnail_attributes[1] * 100;
-		?>
-
-		<div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
-			<div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
-		</div><!-- .panel-image -->
-
-	<?php endif; ?>
-
-	<div class="panel-content">
-		<div class="wrap">
-			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-				<?php // beercan_edit_link( get_the_ID() ); ?>
-
-			</header><!-- .entry-header -->
-
-			<div class="entry-content">
-				<?php
-					/* translators: %s: Name of current post */
-					the_content( sprintf(
-						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'beercan' ),
-						get_the_title()
-					) );
-				?>
-			</div><!-- .entry-content -->
-
-		</div><!-- .wrap -->
-	</div><!-- .panel-content -->
-
-</article><!-- #post-## -->
+		<footer class="entry-footer">
+			<?php beercan_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+	</article><!-- #post-<?php the_ID(); ?> -->
+</div>

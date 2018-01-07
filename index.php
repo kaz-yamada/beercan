@@ -9,50 +9,36 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package beercan
+ * @package Beercan
  */
+
 get_header();
 ?>
+<div id="content-inner" class="grid-container">
+	<div class="grid-x grid-padding-x">
+		<div id="primary" class="content-area cell auto">
+			<main id="main" class="site-main grid-x grid-margin-x large-up-3 medium-up-2">
+				<?php
+				if ( have_posts() ) :
 
-<div id="primary" class="content-area <?php echo get_page_grid(); ?>">
-    <main id="main" class="site-main" role="main">
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+						get_template_part( 'template-parts/post/content', get_post_format() );
+					endwhile;
+				else :
+					get_template_part( 'template-parts/post/content', 'none' );
+				endif;
+				?>
 
-        <?php
-        if ( have_posts() ) :
-
-            if ( is_home() && !is_front_page() ) :
-                ?>
-                <header>
-                    <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-                </header>
-
-                <?php
-            endif;
-
-            /* Start the Loop */
-            while ( have_posts() ) : the_post();
-
-                /*
-                 * Include the Post-Format-specific template for the content.
-                 * If you want to override this in a child theme, then include a file
-                 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                 */
-                get_template_part( 'template-parts/post/content', get_post_format() );
-
-            endwhile;
-
-            the_posts_navigation();
-
-        else :
-
-            get_template_part( 'template-parts/post/content', 'none' );
-
-        endif;
-        ?>
-
-    </main><!-- #main -->
-</div><!-- #primary -->
-
+				<div class="grid-container pagination-wrapper">
+					<?php
+					beercan_posts_pagination();
+					?>
+				</div>
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!--.grid-x-->
+</div><!--#content-inner-->
 <?php
-get_sidebar();
 get_footer();

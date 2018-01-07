@@ -9,29 +9,30 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package beercan
+ * @package Beercan
  */
-get_header();
-?>
 
-<div id="primary" class="content-area <?php echo get_full_width_grid(); ?>">
-    <main id="main" class="site-main" role="main">
+get_header(); ?>
 
-        <?php
-        while ( have_posts() ) : the_post();
+	<div id="primary" class="content-area grid-container">
+		<main id="main" class="site-main">
 
-            get_template_part( 'template-parts/page/content', 'page' );
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
+				get_template_part( 'template-parts/page/content', 'page' );
 
-        endwhile; // End of the loop.
-        ?>
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+			endwhile; // End of the loop.
+			?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
 get_footer();

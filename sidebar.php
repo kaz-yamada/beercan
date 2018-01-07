@@ -4,14 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package beercan
+ * @package Beercan
  */
-if ( !is_active_sidebar( 'sidebar-1' ) ) {
-    return;
+
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
 }
 ?>
-<div id="sidebar" class="columns large-4 medium-4 small-4" >
-    <aside id="secondary" class="widget-area" role="complementary">
-        <?php dynamic_sidebar( 'sidebar-1' ); ?>
-    </aside><!-- #secondary -->
-</div><!-- #sidebar -->
+<aside id="secondary" class="widget-area medium-3 large-4 cell">
+	<div class="grid-y grid-padding-x grid-padding-y grid-margin-y grid-margin-x">
+		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	</div>
+</aside><!-- #secondary -->

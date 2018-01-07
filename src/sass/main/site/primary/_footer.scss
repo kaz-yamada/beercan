@@ -1,0 +1,19 @@
+#footer {
+	min-height: 330px;
+	background: $black;
+
+	.footer-info {
+		text-align: center;
+	}
+
+	.widget {
+		.menu {
+			flex-flow: wrap column;
+
+			a {
+				display: inline-block;
+			}
+		}
+	}
+
+}

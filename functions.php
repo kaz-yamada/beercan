@@ -1,83 +1,96 @@
 <?php
-
 /**
- * beercan functions and definitions
+ * Beercan functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package beercan
+ * @package Beercan
  */
-if ( !function_exists( 'beercan_setup' ) ) :
 
-    /**
-     * Sets up theme defaults and registers support for various WordPress features.
-     *
-     * Note that this function is hooked into the after_setup_theme hook, which
-     * runs before the init hook. The init hook is too late for some features, such
-     * as indicating support for post thumbnails.
-     */
-    function beercan_setup() {
-        /*
+if ( ! function_exists( 'beercan_setup' ) ) :
+
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features, such
+	 * as indicating support for post thumbnails.
+	 */
+	function beercan_setup() {
+		/*
          * Make theme available for translation.
          * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on beercan, use a find and replace
+         * If you're building a theme based on Beercan, use a find and replace
          * to change 'beercan' to the name of your theme in all the template files.
          */
-        load_theme_textdomain( 'beercan', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'beercan', get_template_directory() . '/languages' );
 
-        // Add default posts and comments RSS feed links to head.
-        add_theme_support( 'automatic-feed-links' );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-        /*
+		/*
          * Let WordPress manage the document title.
          * By adding theme support, we declare that this theme does not use a
          * hard-coded <title> tag in the document head, and expect WordPress to
          * provide it for us.
          */
-        add_theme_support( 'title-tag' );
+		add_theme_support( 'title-tag' );
 
-        /*
+		/*
          * Enable support for Post Thumbnails on posts and pages.
          *
          * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
          */
-        add_theme_support( 'post-thumbnails' );
+		add_theme_support( 'post-thumbnails' );
 
-        // This theme uses wp_nav_menu() in two locations.
-        register_nav_menus( array(
-            'top' => __( 'Top Menu', 'beercan' ),
-            'social' => __( 'Social Links Menu', 'beercan' ),
-        ) );
+		// This theme uses wp_nav_menu() in one location.
+		register_nav_menus(
+			array(
+				'top-menu' => esc_html__( 'Top bar menu', 'beercan' ),
+			)
+		);
 
-        /*
-         * Switch default core markup for search form, comment form, and comments
-         * to output valid HTML5.
-         */
-        add_theme_support( 'html5', array(
-            'search-form',
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
-        ) );
+		/*
+            * Switch default core markup for search form, comment form, and comments
+            * to output valid HTML5.
+            */
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
-        // Set up the WordPress core custom background feature.
-        add_theme_support( 'custom-background', apply_filters( 'beercan_custom_background_args', array(
-            'default-color' => 'ffffff',
-            'default-image' => '',
-        ) ) );
+		// Set up the WordPress core custom background feature.
+		add_theme_support(
+			'custom-background', apply_filters(
+				'beercan_custom_background_args', array(
+					'default-color' => '0a0a0a',
+					'default-image' => '',
+				)
+			)
+		);
 
-        add_theme_support( 'custom-logo', array(
-            'height' => 400,
-            'width' => 400,
-            'flex-height' => true,
-            'flex-width' => true,
-            'header-text' => array( 'site-title', 'site-description' ),
-        ) );
+		// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
 
-        // Add theme support for selective refresh for widgets.
-        add_theme_support( 'customize-selective-refresh-widgets' );
-    }
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo', array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
+	}
 
 endif;
 add_action( 'after_setup_theme', 'beercan_setup' );
@@ -90,7 +103,7 @@ add_action( 'after_setup_theme', 'beercan_setup' );
  * @global int $content_width
  */
 function beercan_content_width() {
-    $GLOBALS[ 'content_width' ] = apply_filters( 'beercan_content_width', 900 );
+	$GLOBALS['content_width'] = apply_filters( 'beercan_content_width', 640 );
 }
 
 add_action( 'after_setup_theme', 'beercan_content_width', 0 );
@@ -101,66 +114,76 @@ add_action( 'after_setup_theme', 'beercan_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function beercan_widgets_init() {
-    register_sidebar( array(
-        'name' => esc_html__( 'Sidebar', 'beercan' ),
-        'id' => 'sidebar-1',
-        'description' => esc_html__( 'Add widgets here.', 'beercan' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget' => '</section>',
-        'before_title' => '<h2 class="widget-title">',
-        'after_title' => '</h2>',
-    ) );
+
+	// Register Sidebar widget area.
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'beercan' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'beercan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s cell">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
+	$footer_columns = get_footer_columns();
+
+	for ( $i = 1; $i <= $footer_columns; $i++ ) {
+		$name = 'Footer Column ' . $i;
+		$id   = 'footer-widgets-' . $i;
+
+		register_sidebar(
+			array(
+				'name'          => esc_html( $name ),
+				'id'            => esc_html( $id ),
+				'description'   => esc_html__( 'Add widgets here.', 'beercan' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s cell">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h4 class="widget-title">',
+				'after_title'   => '</h4>',
+			)
+		);
+	}
 }
 
 add_action( 'widgets_init', 'beercan_widgets_init' );
 
-function get_full_width_grid() {
-    return 'columns large-12 medium-12 small-12';
+/**
+ * Enqueues theme styles
+ *
+ * @return void
+ */
+function beercan_enqueue_style() {
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', '4.0' );
+	wp_enqueue_style( 'raleway-cdn', 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700' );
+	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/app.css' );
 }
 
-function get_page_grid() {
-    if ( is_front_page() ) {
-        return 'columns large-12 medium-12 small-12';
-    } else {
-        return 'columns large-8 medium-8 small-8';
-    }
-}
+add_action( 'wp_enqueue_scripts', 'beercan_enqueue_style' );
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue theme scripts
+ *
+ * @return void
  */
 function beercan_scripts() {
+	//wp_enqueue_script( 'foundation', get_template_directory_uri() . '/node_modules/foundation-sites/dist/js/foundation.js', array( 'jquery' ), '1.0', true );
+	wp_enqueue_script( 'beercan-bundle', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', true );
 
-    // Enqueue stylesheets    
-    wp_enqueue_style( 'css-foundation', get_template_directory_uri() . '/assets/css/foundation.min.css' );
-    wp_enqueue_style( 'beercan-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'css-customizer', get_template_directory_uri() . '/assets/css/customizer.css' );
-    wp_enqueue_style( 'font-google', 'https://fonts.googleapis.com/css?family=Raleway' );
+	wp_localize_script(
+		'beercan-bundle', 'screenReaderText', array(
+			'expand'   => __( 'expand child menu', 'beercan' ),
+			'collapse' => __( 'collapse child menu', 'beercan' ),
+		)
+	);
 
+	wp_enqueue_script( 'beercan-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-    // Enqueue javascript    
-    wp_enqueue_script( 'beercan-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '1.0', true );
-
-    $beercan_l10n = array(
-        'quote' => beercan_get_svg( array( 'icon' => 'quote-right' ) ),
-    );
-
-    if ( has_nav_menu( 'top' ) ) {
-        wp_enqueue_script( 'beercan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '1.0', true );
-        $beercan_l10n[ 'expand' ] = __( 'Expand child menu', 'beercan' );
-        $beercan_l10n[ 'collapse' ] = __( 'Collapse child menu', 'beercan' );
-        $beercan_l10n[ 'icon' ] = beercan_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
-    }
-
-    wp_enqueue_script( 'beercan-global', get_template_directory_uri() . '/assets/js/global.js', array( 'jquery' ), '1.0', true );
-    wp_enqueue_script( 'jquery-scrollto', get_template_directory_uri() . '/assets/js/jquery.scrollTo.js', array( 'jquery' ), '2.1.2', true );
-    wp_localize_script( 'beercan-skip-link-focus-fix', 'beercanScreenReaderText', $beercan_l10n );
-    wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-    wp_enqueue_script( 'js-foundation', get_template_directory_uri() . '/assets/js/foundation.min.js', array(), '1.0', true );
-
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'beercan_scripts' );
@@ -176,9 +199,9 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/template-functions.php';
 
 /**
  * Customizer additions.
@@ -186,10 +209,17 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * SVG icons functions and filters.
- */
-require get_parent_theme_file_path( '/inc/icon-functions.php' );
-/**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+if ( defined( 'JETPACK__VERSION' ) ) {
+	include get_template_directory() . '/inc/jetpack.php';
+}
+
+/**
+ * Determines if the current page is a
+ *
+ * @return type boolean
+ */
+function is_a_loop() {
+	return ( is_archive() || is_home() || is_category() || is_tag() ) ? true : false;
+}

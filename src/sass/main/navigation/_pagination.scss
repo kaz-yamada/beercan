@@ -1,0 +1,40 @@
+.pagination-wrapper {
+	width: 100%;
+}
+
+
+.pagination {
+	text-align: center;
+	width: 100%;
+	margin: 1.5em 0;
+
+	.page-numbers {
+		display: block;
+		@include font-size(1);
+		line-height: 1.5;
+		padding: 0.5rem;
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+    .site-main & {
+        overflow: hidden;
+    }
+
+    .nav-previous {
+        float: left;
+        width: 50%;
+    }
+
+    .nav-next {
+        float: right;
+        text-align: right;
+        width: 50%;
+    }
+}

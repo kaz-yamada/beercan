@@ -1,0 +1,76 @@
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+.comments-area {
+	.comment-list {
+		margin: 1em 0;
+		list-style-type: none;
+
+		.comment {
+			article {
+				@include shadow-border(rgba(0,0,0,0.5));
+				margin-bottom: 1em;
+				padding: 1em;
+
+				.comment-meta {
+					margin-bottom: 1em;
+
+					& > div {
+						height: 30px;
+					}
+
+					.comment-author {
+						img {
+							float: left;
+							margin-right: 1em;
+						}
+
+						.fn,
+						.says {
+							display: inline-block;
+							padding-top: 5px;
+						}
+					}
+				}
+			}
+
+			&.byuser {
+				.fn {
+					&:before {
+						content: '(User)';
+						background-color: $color__text-screen;
+						color: $color__link;
+						margin: 0 8px;
+						padding: 0 8px;
+					}
+				}
+			}
+
+			&.bypostauthor {
+				article {
+					border-top: solid 5px $color__link;
+					border-bottom: solid 5px $color__link;
+				}
+
+				.fn {
+					&:after {
+						content: '(Post Author)';
+						background-color: $color__text-screen;
+						color: $color__link;
+						margin: 0 8px;
+						padding: 0 8px;
+					}
+				}
+			}
+		}
+
+		.children {
+			list-style: none;
+		}
+	}
+}

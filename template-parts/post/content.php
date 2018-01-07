@@ -4,66 +4,37 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Beercan
- * @since 1.0
- * @version 1.0
+ * @package Beercan
  */
+
 ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'cell' ); ?> >
+	<div class="post-inner grid-container grid-y grid-padding-x">
+		<?php beercan_post_thumbnail(); ?>
+		<div class="entry-content cell">
+			<?php
+			if ( ! is_singular() ) :
+				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+			endif;
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php
-    if ( is_sticky() && is_home() ) :
-        echo beercan_get_svg( array( 'icon' => 'thumb-tack' ) );
-    endif;
-    ?>
-    <header class="entry-header">
-        <?php
-        if ( 'post' === get_post_type() ) :
-            echo '<div class="entry-meta">';
-            if ( is_single() ) :
-                beercan_posted_on();
-            else :
-                echo beercan_time_link();
-                beercan_edit_link();
-            endif;
-            echo '</div><!-- .entry-meta -->';
-        endif;
+			if ( 'post' === get_post_type() ) :
+				?>
+				<div class="entry-meta">
+					<?php beercan_posted_on(); ?>
+				</div><!-- .entry-meta -->
+				<?php
+			endif;
+			if ( is_a_loop() ) :
+				the_excerpt();
+			else :
+				the_content();
+			endif;
 
-        if ( is_single() ) {
-            the_title( '<h1 class="entry-title">', '</h1>' );
-        } else {
-            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-        }
-        ?>
-    </header><!-- .entry-header -->
-
-    <?php if ( '' !== get_the_post_thumbnail() && !is_single() ) : ?>
-        <div class="post-thumbnail">
-            <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'beercan-featured-image' ); ?>
-            </a>
-        </div><!-- .post-thumbnail -->
-    <?php endif; ?>
-
-    <div class="entry-content">
-        <?php
-        /* translators: %s: Name of current post */
-        the_content( sprintf(
-                        __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'beercan' ), get_the_title()
-        ) );
-
-        wp_link_pages( array(
-            'before' => '<div class="page-links">' . __( 'Pages:', 'beercan' ),
-            'after' => '</div>',
-            'link_before' => '<span class="page-number">',
-            'link_after' => '</span>',
-        ) );
-        ?>
-    </div><!-- .entry-content -->
-
-<?php if ( is_single() ) : ?>
-        <?php beercan_entry_footer(); ?>
-    <?php endif; ?>
-
-</article><!-- #post-## -->
+			wp_link_pages( array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'beercan' ),
+				'after'  => '</div>',
+			) );
+			?>
+		</div><!-- .entry-content -->
+	</div><!--.post-inner-->
+</article><!-- #post-<?php the_ID(); ?> -->
