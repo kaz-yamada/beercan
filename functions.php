@@ -128,6 +128,18 @@ function beercan_widgets_init() {
 		)
 	);
 
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar 404', 'beercan' ),
+			'id'            => 'sidebar-404',
+			'description'   => esc_html__( 'Add widgets here.', 'beercan' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s cell">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		)
+	);
+
 	$footer_columns = get_footer_columns();
 
 	for ( $i = 1; $i <= $footer_columns; $i++ ) {
@@ -156,9 +168,7 @@ add_action( 'widgets_init', 'beercan_widgets_init' );
  * @return void
  */
 function beercan_enqueue_style() {
-	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', '4.0' );
-	wp_enqueue_style( 'raleway-cdn', 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700' );
-	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/app.css' );
+	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/main.css' );
 }
 
 add_action( 'wp_enqueue_scripts', 'beercan_enqueue_style' );
@@ -169,7 +179,6 @@ add_action( 'wp_enqueue_scripts', 'beercan_enqueue_style' );
  * @return void
  */
 function beercan_scripts() {
-	//wp_enqueue_script( 'foundation', get_template_directory_uri() . '/node_modules/foundation-sites/dist/js/foundation.js', array( 'jquery' ), '1.0', true );
 	wp_enqueue_script( 'beercan-bundle', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', true );
 
 	wp_localize_script(

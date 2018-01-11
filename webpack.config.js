@@ -1,12 +1,12 @@
 const path = require( 'path' );
+const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
-const webpack = require( 'webpack' );
 
 module.exports = {
-    entry: {
-        app: './src/index.js',
-    },
+    entry: [
+        './src/index.js'
+    ],
     output: {
         path: path.resolve( __dirname, "dist" ),
         filename: 'bundle.js'
@@ -25,8 +25,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: "style-loader!css-loader",
-                exclude: /node_modules/
+                loader: [ 'style-loader', 'css-loader' ],
             },
             {
                 test: /\.scss$/,
@@ -49,6 +48,13 @@ module.exports = {
                         }
                     ]
                 } )
+            },
+            {
+                test: /\.(svg|eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'url-loader?importLoaders=1&limit=100000',
+                options: {
+                    name: "fonts/[name].[ext]",
+                },
             },
         ]
     },

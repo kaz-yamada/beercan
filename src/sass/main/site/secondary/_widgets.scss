@@ -31,6 +31,10 @@
 
 .widget_recent_entries {
 	@include widget-icon("\f15c");
+	ul {
+		list-style: none;
+		margin-left: 0;
+	}
 }
 
 .widget_archive {
@@ -46,10 +50,7 @@
 			border: solid 1px $light-gray;
 			margin-right: 0.5em;
 			margin-bottom: 0.5em;
-
-			a {
-				padding: 0.4em;
-			}
+			padding: 0.4em;
 		}
 	}
 
@@ -61,4 +62,10 @@
 
 .widget_meta {
 	@include widget-icon("\f129");
+}
+
+.tagcloud {
+	a {
+		font-size: 0.9rem !important; /* Force same size tags */
+	}
 }
