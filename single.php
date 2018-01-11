@@ -6,6 +6,7 @@
  *
  * @package Beercan
  */
+
 get_header();
 ?>
 
@@ -37,7 +38,6 @@ get_header();
 				?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		<?php //get_sidebar(); ?>
 	</div><!-- .grid-x -->
 </div><!--#content-inner-->
 <?php

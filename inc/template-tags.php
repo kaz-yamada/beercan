@@ -12,6 +12,10 @@ if ( ! function_exists( 'beercan_get_post_title' ) ) :
 	/**
 	 * Returns the current post title.
 	 *
+	 * @param string $before String before the title.
+	 * @param string $after String after the title.
+	 * @param string $echo True to echo out the output, false to return. Defalut true.
+	 *
 	 * @return string title of the post.
 	 */
 	function beercan_get_post_title( $before = '<h1>', $after = '</h1>', $echo = true ) {
@@ -133,11 +137,16 @@ if ( ! function_exists( 'beercan_posted_on' ) ) :
 			esc_html( '%s' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
+
+		$author_id   = intval( get_post_field( 'post_author', get_the_ID() ) );
+		$author_name = get_the_author_meta( 'display_name', $author_id );
+
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html( '%s' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( $author_name ) . '</a></span>'
 		);
+
 		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 		$comments_count = get_comments_number();
@@ -202,7 +211,18 @@ if ( ! function_exists( 'beercan_post_thumbnail' ) ) :
 				if ( has_post_thumbnail() ) {
 					the_post_thumbnail();
 				} elseif ( $placeholder ) {
-					echo '<i class="fa fa-file-text" aria-hidden="true"></i>';
+					$format = get_post_format();
+					if ( 'video' === $format ) {
+						echo '<i class="dashicons dashicons-video-alt" aria-hidden="true"></i>';
+					} elseif ( 'audio' === $format ) {
+						echo '<i class="dashicons dashicons-format-audio" aria-hidden="true"></i>';
+					} elseif ( 'image' === $format ) {
+						echo '<i class="dashicons dashicons-format-image" aria-hidden="true"></i>';
+					} elseif ( 'gallery' === $format ) {
+						echo '<i class="dashicons dashicons-format-gallery" aria-hidden="true"></i>';
+					} else {
+						echo '<i class="fa fa-file-text" aria-hidden="true"></i>';
+					}
 				}
 				echo '</a>';
 				?>
@@ -234,7 +254,9 @@ endif;
  */
 function beercan_post_subtitle() {
 	if ( is_single() ) {
+		echo '<div class="entry-meta">';
 		beercan_posted_on();
+		echo '</div>';
 	} elseif ( is_category() ) {
 		echo category_description();
 	}

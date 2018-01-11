@@ -90,6 +90,11 @@ if ( ! function_exists( 'beercan_setup' ) ) :
 				'flex-height' => true,
 			)
 		);
+
+		add_theme_support(
+			'post-formats',
+			array( 'audio', 'video', 'image', 'gallery' )
+		);
 	}
 
 endif;
