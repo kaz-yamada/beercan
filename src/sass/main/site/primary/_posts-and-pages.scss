@@ -25,7 +25,8 @@
 }
 
 #content {
-	background-color: $color__background-content;
+	min-height: 250px;
+	padding-bottom: 1em;
 }
 
 .archive,
@@ -115,6 +116,7 @@
 			max-height: 400px;
 			max-width: 600px;
 			object-fit: contain;
+			width: auto;
 		}
 	}
 }

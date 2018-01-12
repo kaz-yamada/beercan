@@ -17,7 +17,6 @@
 		if ( is_singular() && has_post_thumbnail() ) :
 			beercan_post_thumbnail();
 		endif;
-
 		?>
 	</div><!--.title-bar-content -->
 </header><!-- .page-header -->

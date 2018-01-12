@@ -220,6 +220,14 @@ if ( ! function_exists( 'beercan_post_thumbnail' ) ) :
 						echo '<i class="dashicons dashicons-format-image" aria-hidden="true"></i>';
 					} elseif ( 'gallery' === $format ) {
 						echo '<i class="dashicons dashicons-format-gallery" aria-hidden="true"></i>';
+					} elseif ( 'link' === $format ) {
+						echo '<i class="dashicons dashicons-admin-links" aria-hidden="true"></i>';
+					} elseif ( 'quote' === $format ) {
+						echo '<i class="dashicons dashicons-format-quote" aria-hidden="true"></i>';
+					} elseif ( 'chat' === $format ) {
+						echo '<i class="dashicons dashicons-format-chat" aria-hidden="true"></i>';
+					} elseif ( 'status' === $format ) {
+						echo '<i class="dashicons dashicons-format-status" aria-hidden="true"></i>';
 					} else {
 						echo '<i class="fa fa-file-text" aria-hidden="true"></i>';
 					}

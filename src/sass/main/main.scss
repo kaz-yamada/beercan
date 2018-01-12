@@ -33,7 +33,7 @@
 # Zurb Foundation
 --------------------------------------------------------------*/
 @import "~foundation-sites/scss/foundation";
-@import 'settings';
+@import 'vendor/settings';
 @include foundation-everything;
 
 /*--------------------------------------------------------------

@@ -50,7 +50,7 @@
         );
 
         $( '.menu-toggle' ).on( 'click', function() {
-            $( '#primary-menu' ).toggleClass( 'toggled-on' );
+            $( '#primary-menu, .main-navigation' ).toggleClass( 'toggled-on' );
             $( this ).toggleClass( 'menu-active' );
         } );
     }

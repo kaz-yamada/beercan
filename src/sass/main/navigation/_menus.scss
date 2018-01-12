@@ -1,7 +1,10 @@
+$anchor-height: 64px;
+$stuck-height: 48px;
+
 #site-navigation {
-	z-index: 99999;
-	min-height: 64px;
 	transition: ease height 0.3s;
+	z-index: 9999;
+	min-height: $anchor-height;
 }
 
 .no-js {
@@ -10,7 +13,6 @@
 	}
 }
 /* Top Bar Menu */
-
 .main-navigation {
 	padding: 0;
 	width: 100%;
@@ -78,7 +80,7 @@
 	/* Responsive menu */
 	@include breakpoint(medium down) {
 		& {
-			min-height: 64px;
+			height: $anchor-height;
 			transition: ease min-height 0.3s;
 		}
 
@@ -153,6 +155,10 @@
 			&.toggled-on {
 				background-color: $color__background-body;
 				position: fixed;
+				top: $anchor-height;
+				overflow-y: auto;
+				height: 100%;
+				min-height: 300px;
 			}
 		}
 
@@ -160,45 +166,56 @@
 			display: none;
 
 			&.toggled-on {
-				display: flex;
-				flex-flow: wrap column;
+				display: block;
 				width: 100%;
 				left: 0;
 				right: 0;
 				position: relative;
+				margin-top: 2px;
 			}
 
-			li {
-				display: flex;
-				position: relative;
-				flex-flow: wrap;
+			.menu-item {
 				width: 100%;
+				position: relative;
 
 				a {
-					flex: 1 0 auto;
+					padding: 1em;
+					box-sizing: content-box;
+
+					&:before {
+						display: none;
+					}
 				}
 
 				&.menu-item-has-children {
 					a {
 						&:after {
-							display: none;
+							display: none !important; // Hide Submenu arrow
 						}
 					}
 					/* Mobile Sub Menu */
 					ul {
-						margin-left: 0.5rem;
+						padding-left: 0.5rem;
+						position: relative;
 
 						li:before {
 							content: '';
 							display: inline-block;
 							border-left: solid 5px $color__link;
+							position: absolute;
+							left: 0;
+							height: 100%;
+							width: 5px;
 						}
 					}
 
 					button {
 						display: inline-block;
 						background: transparent;
-						padding: 0.5em 0.7em;
+						padding: 1em;
+						position: absolute;
+						right: 0;
+						top: 0;
 
 						&:after {
 							content: '\f078';

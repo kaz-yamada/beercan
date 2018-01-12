@@ -12,6 +12,9 @@
 ?>
 </div><!-- #content -->
 <footer id="footer" class="site-footer">
+	<div class="scroll-to-top">
+		<a href="#"><span class="dashicons dashicons-arrow-up-alt2"></span></a>
+	</div>
 	<div class="footer-widget-area grid-container grid-x grid-padding-x grid-padding-y medium-up-3">
 		<?php
 		$columns = get_footer_columns();

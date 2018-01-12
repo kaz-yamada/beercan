@@ -7,7 +7,7 @@
 
 ?>
 <div id="site-navigation" class="sticky-container" data-sticky-container>
-	<nav class="main-navigation top-bar sticky" data-sticky data-options="marginTop: 0">
+	<nav class="main-navigation top-bar sticky" data-sticky data-options="marginTop:0;">
 		<div class="top-bar-left">
 			<h4 class="site-title menu"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h4>
 		</div>
