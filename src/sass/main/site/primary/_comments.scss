@@ -33,20 +33,7 @@
 						.fn,
 						.says {
 							display: inline-block;
-							padding-top: 5px;
 						}
-					}
-				}
-			}
-
-			&.byuser {
-				.fn {
-					&:before {
-						content: '(User)';
-						background-color: $color__text-screen;
-						color: $color__link;
-						margin: 0 8px;
-						padding: 0 8px;
 					}
 				}
 			}
@@ -55,15 +42,9 @@
 				article {
 					border-top: solid 5px $color__link;
 					border-bottom: solid 5px $color__link;
-				}
 
-				.fn {
-					&:after {
-						content: '(Post Author)';
-						background-color: $color__text-screen;
-						color: $color__link;
-						margin: 0 8px;
-						padding: 0 8px;
+					.fn {
+
 					}
 				}
 			}
@@ -71,6 +52,38 @@
 
 		.children {
 			list-style: none;
+		}
+	}
+	@include breakpoint(small down) {
+		.comment-list {
+			.comment {
+				article {
+					.comment-meta {
+						height: auto;
+						text-align: center;
+
+						.comment-author {
+							height: auto;
+							text-align: center;
+
+							img {
+								float: none;
+								margin: 0 auto 1em;
+								display: block;
+							}
+
+							.fn,
+							.says {
+								display: inline-block;
+							}
+						}
+
+						.comment-metadata {
+							height: auto;
+						}
+					}
+				}
+			}
 		}
 	}
 }
