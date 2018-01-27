@@ -4,6 +4,7 @@
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Fonts
+# Font Awesome
 # Zurb Foundation
 # Variables and Mixins
 # Typography
@@ -32,15 +33,19 @@
 /*--------------------------------------------------------------
 # Zurb Foundation
 --------------------------------------------------------------*/
+@import 'settings';
 @import "~foundation-sites/scss/foundation";
-@import 'vendor/settings';
+@import '~motion-ui/src/motion-ui';
+
 @include foundation-everything;
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 /*--------------------------------------------------------------
 # Variables and Mixins
 --------------------------------------------------------------*/
-@import "variables-site/variables-site";
 @import "mixins/mixins-master";
+@import "variables-site/variables-site";
 
 /*--------------------------------------------------------------
 # Typography

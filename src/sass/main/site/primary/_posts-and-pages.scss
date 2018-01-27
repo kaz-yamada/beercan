@@ -1,7 +1,3 @@
-#page {
-	background-color: $body-background;
-}
-
 .sticky-post {
 	display: block;
 }
@@ -26,11 +22,11 @@
 
 #content {
 	min-height: 250px;
-	padding-bottom: 1em;
+	padding: 1em 0;
 }
 
 .archive,
-.blog {
+.blog-loop {
 	article {
 		padding-bottom: 1rem;
 		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -38,7 +34,7 @@
 		&:hover {
 			-webkit-transform: translate3D(0, -1px, 0);
 			transform: translate3D(0, -1px, 0);
-			box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 0 20px 5px rgba($primary-color, 0.5);
 			transition: 0.5s ease all;
 		}
 
@@ -90,7 +86,7 @@
 		}
 
 		&.sticky {
-			width: calc(100% - 1.875rem) !important;
+			border: solid 1px $primary-color;
 
 			.entry-title {
 				a:before {

@@ -29,11 +29,11 @@
 }
 
 @mixin shadow-border( $shadow-color: $black ) {
-	box-shadow: 0 0 35px 5px $shadow-color;
+	box-shadow: 0 0 10px 0 $shadow-color;
 }
 
 @mixin shadow-border-bottom( $shadow-color: $black ) {
-	box-shadow: 0 0 35px 5px $shadow-color;
+	box-shadow: 0 0 10px 0px $shadow-color;
 }
 
 // If has admin bar

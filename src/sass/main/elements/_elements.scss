@@ -10,6 +10,8 @@ html {
 
 body {
 	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+	// @include linear-gradient(to bottom, $color__background-body, $color__background-light);
+	min-height: 100vh;
 }
 
 hr {

@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Full Width Page
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -13,9 +15,13 @@
  */
 
 get_header();
+
+if ( ! is_front_page() ) {
+	get_template_part( 'template-parts/header/title-bar' );
+}
 ?>
 
-	<div id="primary" class="content-area grid-container">
+	<div id="primary" class="content-area grid-container fluid">
 		<main id="main" class="site-main">
 
 			<?php

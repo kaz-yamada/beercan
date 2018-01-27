@@ -1,6 +1,6 @@
 <?php
 /**
- * Tmeplate part for header navigation bar.
+ * Tmeplate part for top navigation bar.
  *
  * @package beercan
  */
@@ -13,16 +13,17 @@
 		</div>
 		<div class="top-bar-right">
 		<div class="menu-toggle-wrapper hide-for-large">
-			<button class="menu-toggle" type="button" aria-expanded="false">
+			<button id="primary-menu-toggle" class="menu-toggle" type="button" aria-expanded="false">
 				<span class="menu-toggle-icon"></span>
 			</button>
 		</div>
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location' => 'top-menu',
-					'menu_id'        => 'primary-menu',
-					'menu_class'     => 'menu vertical large-horizontal',
+					'theme_location'  => 'top-menu',
+					'menu_id'         => 'primary-menu',
+					'menu_class'      => 'menu vertical large-horizontal fast',
+					'container_id'    => 'nav-container',
 				)
 			);
 			?>

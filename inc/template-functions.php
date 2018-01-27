@@ -112,3 +112,30 @@ function beercan_archive_title( $title ) {
 }
 
 add_filter( 'get_the_archive_title', 'beercan_archive_title' );
+
+
+if ( ! function_exists( 'beercan_header_content' ) ) :
+	/**
+	 * Function to display header content.
+	 */
+	function beercan_header_content() {
+		get_template_part( 'template-parts/header/topbar' );
+
+		if ( get_page_template_slug() != 'page-templates/page-no-header.php' ) {
+			get_template_part( 'template-parts/header/page-header' );
+		}
+	}
+endif;
+
+add_action( 'beercan_do_header', 'beercan_header_content' );
+
+if ( ! function_exists( 'beercan_page_header_title' ) ) :
+	/**
+	 * Function to display page/post title bar
+	 */
+	function beercan_page_header_title() {
+		get_template_part( 'template-parts/header/title-bar' );
+	}
+endif;
+
+add_action( 'beercan_header_title', 'beercan_page_header_title' );

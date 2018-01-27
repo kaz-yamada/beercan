@@ -4,7 +4,7 @@
  *
  * You can add an optional custom header image to header.php like so ...
  *
-	<?php the_header_image_tag(); ?>
+ * <?php the_header_image_tag(); ?>
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
@@ -23,7 +23,7 @@ function beercan_custom_header_setup() {
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,
-				'height'             => 250,
+				'height'             => 200,
 				'flex-height'        => true,
 				'wp-head-callback'   => 'beercan_header_style',
 			)

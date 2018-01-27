@@ -5,8 +5,7 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
-
-( function( $ ) {
+var $ = require( 'jquery' );
 
     // Site title and description.
     wp.customize(
@@ -54,4 +53,3 @@
             );
         }
     );
-} )( jQuery );

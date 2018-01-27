@@ -60,7 +60,7 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-//@import '../util/util';
+@import '~foundation-sites/scss/util/util';
 
 // 1. Global
 // ---------
@@ -69,20 +69,20 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #f36902,
-  secondary: #e3a900,
+  primary: #f76e00,
+  secondary: #4717f6,
   success: #3adb76,
-  warning: #dc0002,
+  warning: #ffae00,
   alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
-$dark-gray: #2b2b2b;
+$dark-gray: #0e0b16;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $dark-gray;
-$body-font-color: $white;
-$body-font-family: 'Raleway', sans-serif;
+$body-background: $white;
+$body-font-color: $black;
+$body-font-family: 'Roboto Slab', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -222,7 +222,7 @@ $input-error-font-weight: $global-weight-bold;
 // 7. Accordion
 // ------------
 
-$accordion-background: $body-background;
+$accordion-background: $white;
 $accordion-plusminus: true;
 $accordion-title-font-size: rem-calc(12);
 $accordion-item-color: $primary-color;
@@ -284,8 +284,8 @@ $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $body-font-color;
-$button-color-alt: $primary-color;
+$button-color: $white;
+$button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
@@ -299,6 +299,7 @@ $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
 $button-hollow-hover-lightness: -50%;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+$button-responsive-expanded: false;
 
 // 12. Button Group
 // ----------------
@@ -312,7 +313,7 @@ $buttongroup-radius-on-each: true;
 // 13. Callout
 // -----------
 
-$callout-background: $body-background;
+$callout-background: $white;
 $callout-background-fade: 85%;
 $callout-border: 1px solid rgba($black, 0.25);
 $callout-margin: 0 0 1rem 0;
@@ -325,7 +326,7 @@ $callout-link-tint: 30%;
 // 14. Card
 // --------
 
-$card-background: $body-background;
+$card-background: $white;
 $card-font-color: $body-font-color;
 $card-divider-background: $light-gray;
 $card-border: 1px solid $light-gray;
@@ -361,9 +362,9 @@ $drilldown-transition: transform 0.15s linear;
 $drilldown-arrows: true;
 $drilldown-padding: $global-menu-padding;
 $drilldown-nested-margin: 0;
-$drilldown-background: $body-background;
+$drilldown-background: $white;
 $drilldown-submenu-padding: $drilldown-padding;
-$drilldown-submenu-background: $body-background;
+$drilldown-submenu-background: $white;
 $drilldown-arrow-color: $primary-color;
 $drilldown-arrow-size: 6px;
 
@@ -408,26 +409,26 @@ $flexbox-responsive-breakpoints: true;
 // 20. Forms
 // ---------
 
-$fieldset-border: 1px solid $primary-color;
+$fieldset-border: 1px solid $medium-gray;
 $fieldset-padding: rem-calc(20);
 $fieldset-margin: rem-calc(18 0);
 $legend-padding: rem-calc(0 3);
 $form-spacing: rem-calc(16);
-$helptext-color: $body-font-color;
+$helptext-color: $black;
 $helptext-font-size: rem-calc(13);
 $helptext-font-style: italic;
 $input-prefix-color: $black;
 $input-prefix-background: $light-gray;
-$input-prefix-border: 1px solid $primary-color;
+$input-prefix-border: 1px solid $medium-gray;
 $input-prefix-padding: 1rem;
 $form-label-color: $black;
 $form-label-font-size: rem-calc(14);
 $form-label-font-weight: $global-weight-normal;
 $form-label-line-height: 1.8;
-$select-background: $white;
+$select-background: $body-background;
 $select-triangle-color: $dark-gray;
 $select-radius: $global-radius;
-$input-color: $body-font-color;
+$input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
 $input-font-size: rem-calc(16);
@@ -435,12 +436,12 @@ $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
 $input-background: $body-background;
 $input-background-focus: $body-background;
-$input-background-disabled: $light-gray;
-$input-border: 1px solid $primary-color;
-$input-border-focus: 1px solid $secondary-color;
+$input-background-disabled: $dark-gray;
+$input-border: 1px solid $medium-gray;
+$input-border-focus: 1px solid $primary-color;
 $input-padding: $form-spacing / 2;
-$input-shadow: inset 0 1px 2px rgba($primary-color, 0.1);
-$input-shadow-focus: 0 0 5px $secondary-color;
+$input-shadow: inset 0 1px 2px rgba($black, 0.1);
+$input-shadow-focus: 0 0 5px $medium-gray;
 $input-cursor-disabled: not-allowed;
 $input-transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 $input-number-spinners: true;
@@ -533,7 +534,7 @@ $orbit-control-zindex: 10;
 
 $pagination-font-size: rem-calc(14);
 $pagination-margin-bottom: $global-margin;
-$pagination-item-color: $primary-color;
+$pagination-item-color: $body-font-color;
 $pagination-item-padding: rem-calc(3 10);
 $pagination-item-spacing: rem-calc(1);
 $pagination-radius: $global-radius;
@@ -697,7 +698,7 @@ $prototype-decoration-breakpoints: $global-prototype-breakpoints;
 $prototype-text-decoration: (
   overline,
   underline,
-  line-through
+  line-through,
 );
 
 // 44. Prototype Text-Transformation
@@ -770,7 +771,7 @@ $switch-paddle-transition: all 0.25s ease-out;
 // 50. Table
 // ---------
 
-$table-background: $black;
+$table-background: $white;
 $table-color-scale: 5%;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);

@@ -8,6 +8,8 @@
  */
 
 get_header();
+
+get_template_part( 'template-parts/header/title-bar' );
 ?>
 
 <div id="content-inner" class="grid-container">

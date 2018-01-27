@@ -173,6 +173,7 @@ add_action( 'widgets_init', 'beercan_widgets_init' );
  * @return void
  */
 function beercan_enqueue_style() {
+	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/main.css' );
 }
 
@@ -208,6 +209,11 @@ add_action( 'wp_enqueue_scripts', 'beercan_scripts' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
+ * Include theme hooks.
+ */
+require get_template_directory() . '/inc/hooks.php';
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -227,13 +233,4 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	include get_template_directory() . '/inc/jetpack.php';
-}
-
-/**
- * Determines if the current page is a
- *
- * @return type boolean
- */
-function is_a_loop() {
-	return ( is_archive() || is_home() || is_category() || is_tag() ) ? true : false;
 }

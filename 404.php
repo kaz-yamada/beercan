@@ -7,7 +7,10 @@
  * @package Beercan
  */
 
-get_header(); ?>
+get_header();
+
+get_template_part( 'template-parts/header/title-bar' );
+?>
 <div id="content-inner" class="grid-container">
 	<div class="grid-x grid-padding-x grid-padding-y grid-margin-x">
 		<div id="primary" class="content-area cell auto">

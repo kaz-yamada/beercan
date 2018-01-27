@@ -8,7 +8,7 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'cell' ); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'cell fade-in' ); ?> >
 	<div class="post-inner grid-container grid-y grid-padding-x">
 		<?php beercan_post_thumbnail(); ?>
 		<div class="entry-content cell">
@@ -24,7 +24,7 @@
 				</div><!-- .entry-meta -->
 				<?php
 			endif;
-			if ( is_a_loop() ) :
+			if ( beercan_is_a_loop() ) :
 				the_excerpt();
 			else :
 				the_content();

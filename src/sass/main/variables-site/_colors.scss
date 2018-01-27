@@ -11,7 +11,7 @@ $color__text-input: $body-font-color;
 $color__text-input-focus: $body-font-color;
 $color__link: $primary-color;
 $color__link-visited: $primary-color;
-$color__link-hover: $secondary-color;
+$color__link-hover: lighten($primary-color, 20%);
 $color__text-main: $body-font-color;
 
 $color__border-button: $primary-color;

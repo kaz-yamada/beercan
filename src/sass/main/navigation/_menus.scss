@@ -5,6 +5,9 @@ $stuck-height: 48px;
 	transition: ease height 0.3s;
 	z-index: 9999;
 	min-height: $anchor-height;
+	@include breakpoint(small down) {
+		min-height: $stuck-height;
+	}
 }
 
 .no-js {
@@ -12,12 +15,22 @@ $stuck-height: 48px;
 		display: none;
 	}
 }
-/* Top Bar Menu */
+/* For unassigned menus */
 
+#primary-menu {
+	ul {
+		li {
+			a {
+				padding-top: 1.5rem;
+				padding-bottom: 1.5rem;
+			}
+		}
+	}
+}
+/* Top Bar Menu */
 .main-navigation {
 	padding: 0;
 	width: 100%;
-	box-shadow: $black 0 0 10px 0;
 
 	ul {
 		list-style: none;
@@ -43,7 +56,7 @@ $stuck-height: 48px;
 				}
 			}
 
-			&.is-active,
+			&.current_page_item,
 			&:hover {
 				& > a {
 					color: $color__link;
@@ -57,7 +70,7 @@ $stuck-height: 48px;
 		}
 		/* Sub Menu */
 		ul {
-			border: none;
+
 		}
 	}
 
@@ -67,7 +80,8 @@ $stuck-height: 48px;
 	/* Sticky Menu */
 	&.is-stuck {
 		@include admin-sticky-fix;
-		background-color: $color__background-body;
+		background-color: rgba($black, 0.5);
+		box-shadow: rgba(0,0,0,0.5) 0 0 10px 0;
 
 		ul {
 			.menu-item {
@@ -159,8 +173,11 @@ $stuck-height: 48px;
 		}
 
 		#primary-menu {
-			background-color: $color__background-body;
+			background-color: $body-background;
 			position: fixed;
+			width: 100%;
+			left: 0;
+			right: 0;
 			top: 0;
 			bottom: 0;
 			overflow-y: auto;
@@ -169,18 +186,15 @@ $stuck-height: 48px;
 			margin-top: $stuck-height;
 			padding-bottom: $stuck-height;
 			overflow-y: auto;
+			z-index: 99999;
 		}
 
 		ul {
 			display: none;
 
-			&.toggled-on {
+			&.is-active {
 				display: block;
-				width: 100%;
-				left: 0;
-				right: 0;
 				position: relative;
-				margin-top: 2px;
 			}
 
 			.menu-item {
@@ -204,8 +218,12 @@ $stuck-height: 48px;
 					}
 					/* Mobile Sub Menu */
 					ul {
+						background: transparent;
 						padding-left: 0.5rem;
+						width: 100%;
 						position: relative;
+						left: 0;
+
 
 						li:before {
 							content: '';
@@ -225,6 +243,8 @@ $stuck-height: 48px;
 						position: absolute;
 						right: 0;
 						top: 0;
+						height: 48px;
+						z-index: 99999;
 
 						&:after {
 							content: '\f078';

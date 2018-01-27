@@ -10,7 +10,7 @@
  */
 
 ?>
-<div class="grid-container grid-padding-x">
+<div class="grid-padding-x grid-padding-y">
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'cell' ); ?>>
 		<div class="entry-content">
 			<?php
@@ -33,7 +33,6 @@
 			) );
 			?>
 		</div><!-- .entry-content -->
-
 		<footer class="entry-footer">
 			<?php beercan_entry_footer(); ?>
 		</footer><!-- .entry-footer -->

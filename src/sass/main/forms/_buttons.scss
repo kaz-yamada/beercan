@@ -9,6 +9,7 @@ input[type="submit"] {
 	color: $color__text-main;
 	line-height: 1;
 	padding: 0.8em 1.4em;
+	cursor: pointer;
 
 	&:hover {
 		transition: all linear 0.2s;
@@ -16,7 +17,7 @@ input[type="submit"] {
 		background-color: $color__background-body;
 		color: $color__text-main;
 	}
- 
+
 	&:active,
 	&:focus {
 		border-color: $color__border-button-focus;

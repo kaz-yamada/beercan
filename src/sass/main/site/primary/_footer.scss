@@ -1,7 +1,4 @@
 #footer {
-	min-height: 330px;
-	background: $black;
-
 	.footer-info {
 		text-align: center;
 	}
@@ -22,12 +19,39 @@
 	height: 40px;
 	line-height: 35px;
 	text-align: center;
-	font-size: 24px;
-	color: #ffffff;
 	position: fixed;
 	right: 30px;
 	bottom: 20px;
 	border-radius: 100%;
 	opacity: 0.5;
 	z-index: 11;
+	background-color: rgba($color__link, 0.5);
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		border-radius: 50%;
+		background-color: $color__link;
+		width: 101%;
+		height: 101%;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 12;
+		@include prefix((transition: transform ease 0.5s), webkit moz o);
+		@include prefix((transform: scale(0)), webkit moz o);
+	}
+
+	&:hover:before {
+		@include prefix((transform: scale(1)), webkit moz o);
+	}
+
+	span {
+		position: relative;
+		color: $color__text-screen;
+		line-height: 40px;
+		z-index: 18;
+	}
 }
