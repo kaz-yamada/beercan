@@ -87,6 +87,7 @@
 
 		&.sticky {
 			border: solid 1px $primary-color;
+			@extend .medium-12;
 
 			.entry-title {
 				a:before {

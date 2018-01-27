@@ -9,11 +9,17 @@
 
 $header_image = beercan_header_image_url();
 
-?>
+if ( $header_image ) {
+	?>
+	<style>
+		.site-header .header-background {
+			background-image: url('<?php echo esc_attr( $header_image ); ?>');
+		}
+	</style>
+<?php } ?>
+ <!-- $header_image ? style="background-image: url('". esc_attr( $header_image )')""; ?> -->
 <header class="page-header site-branding" >
-	<?php if ( $header_image ) : ?>
-	<div class='header-background' style="background-image: url('<?php echo esc_attr( $header_image ); ?>')">
-		<?php do_action( 'beercan_header_title' ); ?>		
+	<div class='header-background'  >
+		<?php do_action( 'beercan_header_title' ); ?>
 	</div>
-<?php endif; ?>
 </header><!-- .page-header -->

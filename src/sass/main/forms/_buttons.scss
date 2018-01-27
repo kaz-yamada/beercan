@@ -2,20 +2,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: $color__border-button;
-	background: $color__background-button;
-	@include font-size(1);
-	color: $color__text-main;
-	line-height: 1;
-	padding: 0.8em 1.4em;
-	cursor: pointer;
+	// border: 1px solid;
+	// border-color: $color__border-button;
+	// background: $color__background-button;
+	// @include font-size(1);
+	// color: $button-color;
+	// line-height: 1;
+	// padding: 0.8em 1.4em;
+	// cursor: pointer;
+
+	@extend .button;
 
 	&:hover {
-		transition: all linear 0.2s;
-		border-color: $color__border-button-hover;
-		background-color: $color__background-body;
-		color: $color__text-main;
+		// transition: all linear 0.2s;
+		// border-color: $color__border-button-hover;
+		// background-color: $color__background-body;
+		// color: $color__link;
 	}
 
 	&:active,

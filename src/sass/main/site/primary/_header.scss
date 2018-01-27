@@ -19,10 +19,10 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		// background-attachment: fixed;
+		@include linear-gradient($secondary-color, $dark-gray);
 
 		&:before {
-			content: "";
+			content: '';
 			position: absolute;
 			width: 100%;
 			height: 100%;
@@ -56,7 +56,7 @@
 		margin: auto;
 		text-align: center;
 		position: relative;
-	}	
+	}
 }
 
 .single-post {
