@@ -20,11 +20,6 @@ $( window ).scroll( function() {
     }
 } );
 
-$( window ).on( 'changed.zf.mediaquery', function( event, newSize, oldSize ) {
-    console.log( event );
-    console.log( newSize );
-} );
-
 scrollTopButton.on( 'click', function() {
     $( "html, body" ).animate( {
         scrollTop: 0

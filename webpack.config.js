@@ -3,13 +3,18 @@ const webpack = require( 'webpack' );
 const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const BrowserSyncPlugin = require( 'browser-sync-webpack-plugin' );
 
+const PATHS = {
+    build: path.resolve( __dirname, "dist" )
+}
+
 module.exports = {
     entry: [
         './src/index.js'
     ],
     output: {
-        path: path.resolve( __dirname, "dist" ),
-        filename: 'bundle.js'
+        path: PATHS.build,
+        filename: 'bundle.js',
+        publicPath: PATHS.build,
     },
     devtool: 'source-map',
     module: {
@@ -25,7 +30,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: [ 'style-loader', 'css-loader' ],
+                loaders: [ 'style-loader', 'css-loader' ],
             },
             {
                 test: /\.scss$/,
@@ -50,11 +55,8 @@ module.exports = {
                 } )
             },
             {
-                test: /\.(svg|eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-                loader: 'url-loader?importLoaders=1&limit=100000',
-                options: {
-                    name: "fonts/[name].[ext]",
-                },
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'url-loader?name=/fonts/[name].[ext]'
             },
         ]
     },

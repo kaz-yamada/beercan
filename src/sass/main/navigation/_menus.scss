@@ -16,7 +16,6 @@ $stuck-height: 48px;
 	}
 }
 /* For unassigned menus */
-
 #primary-menu {
 	ul {
 		li {
@@ -28,6 +27,7 @@ $stuck-height: 48px;
 	}
 }
 /* Top Bar Menu */
+
 .main-navigation {
 	padding: 0;
 	width: 100%;
@@ -98,11 +98,13 @@ $stuck-height: 48px;
 			height: auto;
 			transition: ease min-height 0.3s;
 			min-height: $stuck-height;
+			background: $body-background;
 		}
 
 		&.is-stuck {
 			min-height: $stuck-height;
 			margin-top: $stuck-height;
+			background: $body-background;
 
 			#primary-menu {
 				height: calc(100vh - 48px);
@@ -111,8 +113,7 @@ $stuck-height: 48px;
 
 		.menu-toggle {
 			position: relative;
-			top: -3px;
-			margin-right: 15px;
+			margin: auto 15px auto auto;
 			z-index: 999999;
 			padding: 10px 35px 16px 0;
 			cursor: pointer;
@@ -187,15 +188,6 @@ $stuck-height: 48px;
 			padding-bottom: $stuck-height;
 			overflow-y: auto;
 			z-index: 99999;
-		}
-
-		ul {
-			display: none;
-
-			&.is-active {
-				display: block;
-				position: relative;
-			}
 
 			.menu-item {
 				width: 100%;
@@ -224,15 +216,16 @@ $stuck-height: 48px;
 						position: relative;
 						left: 0;
 
-
-						li:before {
-							content: '';
-							display: inline-block;
-							border-left: solid 5px $color__link;
-							position: absolute;
-							left: 0;
-							height: 100%;
-							width: 5px;
+						li {
+							&:before {
+								content: '';
+								display: inline-block;
+								border-left: solid 5px $color__link;
+								position: absolute;
+								left: 0;
+								height: 100%;
+								width: 5px;
+							}
 						}
 					}
 
@@ -245,6 +238,7 @@ $stuck-height: 48px;
 						top: 0;
 						height: 48px;
 						z-index: 99999;
+						border: solid 1px $primary-color;
 
 						&:after {
 							content: '\f078';
@@ -259,6 +253,14 @@ $stuck-height: 48px;
 						}
 					}
 				}
+			}
+		}
+
+		ul {
+			display: none;
+
+			&.is-active {
+				display: block;
 			}
 		}
 

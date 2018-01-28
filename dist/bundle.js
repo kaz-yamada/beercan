@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "C:\\xampp\\htdocs\\blogsite\\wp-content\\themes\\beercan\\dist";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 20);
@@ -14802,11 +14802,6 @@ $(window).scroll(function () {
     } else {
         scrollTopButton.fadeOut();
     }
-});
-
-$(window).on('changed.zf.mediaquery', function (event, newSize, oldSize) {
-    console.log(event);
-    console.log(newSize);
 });
 
 scrollTopButton.on('click', function () {
