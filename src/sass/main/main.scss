@@ -33,13 +33,7 @@
 /*--------------------------------------------------------------
 # Zurb Foundation
 --------------------------------------------------------------*/
-@import 'settings';
-@import "~foundation-sites/scss/foundation";
-@import '~motion-ui/src/motion-ui';
-
-@include foundation-everything;
-@include motion-ui-transitions;
-@include motion-ui-animations;
+@import 'foundation';
 
 /*--------------------------------------------------------------
 # Variables and Mixins
@@ -50,7 +44,7 @@
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-@import "typography/typography";
+// @import "typography/typography";
 
 /*--------------------------------------------------------------
 # Elements

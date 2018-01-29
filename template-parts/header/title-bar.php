@@ -15,4 +15,4 @@
 		echo '<h2 class="page-subtitle">' . esc_html( beercan_post_subtitle() ) . '</h2>';
 		?>
 	</div><!--.title-bar-content -->
-</header><!-- .page-header -->
+</header><!-- .page-title-bar -->

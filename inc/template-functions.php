@@ -119,10 +119,18 @@ if ( ! function_exists( 'beercan_header_content' ) ) :
 	 * Function to display header content.
 	 */
 	function beercan_header_content() {
-		get_template_part( 'template-parts/header/topbar' );
+		$id = get_the_id();
+		if ( is_home() ) {
+			$id = get_option( 'page_for_posts' );
+		}
+
+		$post_type = get_post_type( $id );
+
+		// Get top menu nav bar.
+		get_template_part( 'template-parts/header/topbar', $post_type );
 
 		if ( get_page_template_slug() != 'page-templates/page-no-header.php' ) {
-			get_template_part( 'template-parts/header/page-header' );
+			get_template_part( 'template-parts/header/page-header', $post_type );
 		}
 	}
 endif;

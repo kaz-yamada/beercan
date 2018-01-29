@@ -70,7 +70,7 @@ $stuck-height: 48px;
 		}
 		/* Sub Menu */
 		ul {
-			background: $dark-gray;
+			background: $body-background;
 		}
 	}
 
@@ -80,7 +80,7 @@ $stuck-height: 48px;
 	/* Sticky Menu */
 	&.is-stuck {
 		@include admin-sticky-fix;
-		background-color: rgba($black, 0.5);
+		background-color: rgba($body-background, 0.95);
 		box-shadow: rgba(0,0,0,0.5) 0 0 10px 0;
 
 		ul {
@@ -137,7 +137,7 @@ $stuck-height: 48px;
 					-moz-border-radius: 1px;
 					-webkit-border-radius: 1px;
 					border-radius: 1px;
-					background: #fff;
+					background: $primary-color;
 					cursor: pointer;
 				}
 
@@ -215,6 +215,7 @@ $stuck-height: 48px;
 						width: 100%;
 						position: relative;
 						left: 0;
+						border: none;
 
 						li {
 							&:before {
@@ -230,27 +231,11 @@ $stuck-height: 48px;
 					}
 
 					button {
-						display: inline-block;
 						background: transparent;
-						padding: 1em;
-						position: absolute;
-						right: 0;
-						top: 0;
-						height: 48px;
-						z-index: 99999;
 						border: solid 1px $primary-color;
-
-						&:after {
-							content: '\f078';
-							font-family: 'FontAwesome';
-							color: $color__link;
-							display: block;
-							transition: ease all 0.25s;
-						}
-
-						&.toggled-on:after {
-							transform: rotate(180deg);
-						}
+						padding: 0;
+						height: $stuck-height;
+						width: $stuck-height;
 					}
 				}
 			}

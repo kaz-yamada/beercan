@@ -25,6 +25,14 @@ pre {
 	background-color: $color__background-body;
 	color: $color__text-screen;
 	border: solid 1px $color__text-screen;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+	position: relative;
+	z-index: 333;
+}
+
+code {
+	display: inline-block;
 }
 
 @import "lists";

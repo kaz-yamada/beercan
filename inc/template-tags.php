@@ -29,6 +29,8 @@ if ( ! function_exists( 'beercan_get_post_title' ) ) :
 		elseif ( is_search() ) :
 			/* translators: %s: search results. */
 			$title = sprintf( esc_html__( 'Search Results for: %s', 'beercan' ), get_search_query() );
+		elseif ( is_404() ) :
+			$title = __( 'Page not found', 'beercan' );
 		endif;
 
 		if ( $echo ) {
@@ -56,8 +58,10 @@ if ( ! function_exists( 'beercan_post_date' ) ) :
 			$time_string = '<span class="posted-on"><time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time></span>';
 		}
 
+		$date_format = 'd M, Y';
+
 		$post_time = sprintf(
-			$time_string, esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date( 'd M, Y' ) ), esc_attr( get_the_modified_date( 'c' ) ), esc_html( get_the_modified_date() )
+			$time_string, esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date( $date_format ) ), esc_attr( get_the_modified_date( 'c' ) ), esc_html( get_the_modified_date() )
 		);
 
 		return $post_time;
@@ -237,6 +241,9 @@ if ( ! function_exists( 'beercan_post_thumbnail' ) ) :
 endif;
 
 if ( ! function_exists( 'beercan_header_image_url' ) ) :
+	/**
+	 * Returns the url for the header image.
+	 */
 	function beercan_header_image_url() {
 		$img = get_header_image();
 
@@ -317,7 +324,7 @@ if ( ! function_exists( 'beercan_edit_link' ) ) :
  * Displays the edit post link
  */
 function beercan_edit_link() {
-	edit_post_link(
+		edit_post_link(
 		sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
@@ -328,7 +335,7 @@ function beercan_edit_link() {
 		'</span>',
 		'',
 		'button'
-		);
+			);
 	}
 endif;
 

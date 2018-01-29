@@ -19,7 +19,7 @@
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
-		@include linear-gradient($secondary-color, $dark-gray);
+		@include linear-gradient(to right,$secondary-color, $dark-gray);
 
 		&:before {
 			content: '';
