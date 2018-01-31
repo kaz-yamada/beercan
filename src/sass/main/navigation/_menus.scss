@@ -80,8 +80,8 @@ $stuck-height: 48px;
 	/* Sticky Menu */
 	&.is-stuck {
 		@include admin-sticky-fix;
-		background-color: rgba($body-background, 0.95);
-		box-shadow: rgba(0,0,0,0.5) 0 0 10px 0;
+		background-color: rgba($black, 0.95);
+		box-shadow: rgba($black, 0.5) 0 0 10px 0;
 
 		ul {
 			.menu-item {

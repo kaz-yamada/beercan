@@ -1,7 +1,9 @@
 // Import navigation scripts
-require( './js/navigation.js' );
+require( './js/navigation' );
 
 require( './js/app' );
+
+require( './js/skip-link-focus-fix' );
 
 // import font awesome
 require( 'font-awesome/css/font-awesome.css' );

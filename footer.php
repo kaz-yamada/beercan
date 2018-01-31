@@ -39,7 +39,7 @@
 			<span class="sep"> | </span>
 			<?php
 			/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'beercan' ), 'beercan', '<a href="https://kaz-yamada.github.io">Kazuki Yamada</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'beercan' ), 'beercan', '<a href="' . esc_url( get_theme_author_url() ) . '">Kazuki Yamada</a>' );
 			?>
 		</div><!--.footer-info-->
 	</div><!-- .site-info -->

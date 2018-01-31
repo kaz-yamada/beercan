@@ -194,8 +194,6 @@ function beercan_scripts() {
 		)
 	);
 
-	wp_enqueue_script( 'beercan-skip-link-focus-fix', get_template_directory_uri() . '/src/js/skip-link-focus-fix.js', array(), '20151215', true );
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -234,3 +232,12 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	include get_template_directory() . '/inc/jetpack.php';
 }
+
+if ( ! function_exists('get_theme_author_url')) :
+	/**
+	 * Get the url for theme author.
+	 */
+	function get_theme_author_url() {
+		return 'http://github.com/kaz-yamada/beercan';
+	}
+endif;
