@@ -17,8 +17,8 @@ if ( $header_image ) {
 		}
 	</style>
 <?php } ?>
-<header class="page-header site-branding" >
-	<div class='header-background'  >
+<header class="page-header site-branding">
+	<div class='header-background'>
 		<?php do_action( 'beercan_header_title' ); ?>
 	</div>
 </header><!-- .page-header -->

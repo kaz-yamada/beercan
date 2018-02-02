@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Page without header
+ *
  * The template for displaying all pages
  *
  * This is the template that displays all pages by default.
@@ -14,10 +16,8 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area grid-container">
-		<main id="main" class="site-main grid-padding-y grid-padding-x">
-
+	<div id="primary" class="content-area grid-container full">
+		<main id="main" class="site-main">
 			<?php
 			while ( have_posts() ) :
 				the_post();

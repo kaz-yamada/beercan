@@ -362,3 +362,15 @@ if ( ! function_exists( 'beercan_is_a_loop' ) ) :
 		return ( is_archive() || is_home() || is_category() || is_tag() ) ? true : false;
 	}
 endif;
+
+if ( ! function_exists( 'beercan_no_header' ) ) {
+	function beercan_no_header() {
+		 if ( get_page_template_slug() == 'page-templates/page-no-header.php' ) {
+			return true;
+		 } elseif ( get_page_template_slug() == 'page-templates/page-no-header-full.php' ) {
+			return true;
+		 }
+
+		 return false;
+	}
+}

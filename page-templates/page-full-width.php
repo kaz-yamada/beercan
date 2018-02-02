@@ -20,8 +20,7 @@ if ( ! is_front_page() ) {
 	get_template_part( 'template-parts/header/title-bar' );
 }
 ?>
-
-	<div id="primary" class="content-area grid-container fluid">
+	<div id="primary" class="content-area grid-container full">
 		<main id="main" class="site-main">
 
 			<?php

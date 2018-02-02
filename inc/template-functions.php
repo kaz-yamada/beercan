@@ -129,7 +129,7 @@ if ( ! function_exists( 'beercan_header_content' ) ) :
 		// Get top menu nav bar.
 		get_template_part( 'template-parts/header/topbar', $post_type );
 
-		if ( get_page_template_slug() != 'page-templates/page-no-header.php' ) {
+		if ( ! beercan_no_header() ) {
 			get_template_part( 'template-parts/header/page-header', $post_type );
 		}
 	}

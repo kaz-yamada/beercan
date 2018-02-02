@@ -15,7 +15,7 @@
 get_header();
 ?>
 <div id="content-inner" class="grid-container blog-loop">
-	<div class="grid-x grid-padding-x">
+	<div class="grid-x grid-padding-x grid-padding-y">
 		<div id="primary" class="content-area cell auto">
 			<main id="main" class="site-main grid-x grid-margin-x large-up-3 medium-up-2">
 				<?php
