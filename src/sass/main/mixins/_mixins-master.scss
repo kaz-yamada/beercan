@@ -33,7 +33,7 @@
 }
 
 @mixin shadow-border-bottom( $shadow-color: $black ) {
-	box-shadow: 0 0 10px 0px $shadow-color;
+	box-shadow: 0 0 10px 3px $shadow-color;
 }
 
 // If has admin bar

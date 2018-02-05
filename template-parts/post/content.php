@@ -10,7 +10,11 @@
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'cell fade-in' ); ?> >
 	<div class="post-inner grid-container grid-y grid-padding-x">
-		<?php beercan_post_thumbnail(); ?>
+		<?php
+			if ( ! is_singular() ) {
+				beercan_post_thumbnail();
+			}
+		?>
 		<div class="entry-content cell">
 			<?php
 			if ( ! is_singular() ) :

@@ -9,8 +9,12 @@
 
 ?>
 <header class="page-header site-branding" >
-	<div class='header-posts' >
-		<?php beercan_post_thumbnail( true, false ); ?>
-		<?php do_action( 'beercan_header_title' ); ?>
+	<div class='header-posts header-background' >
+		<?php
+			if ( is_singular() ) {
+				beercan_post_thumbnail( true, false );
+			}
+			do_action( 'beercan_header_title' );
+		?>
 	</div>
 </header><!-- .page-header -->

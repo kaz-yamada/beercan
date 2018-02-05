@@ -252,11 +252,11 @@ if ( ! function_exists( 'beercan_header_image_url' ) ) :
 			if ( $blog_page_id ) {
 				$thumb_url = get_the_post_thumbnail_url( $blog_page_id );
 			}
-		} else {
+		} elseif ( is_singular() ) {
 			$thumb_url = get_the_post_thumbnail_url();
 		}
 
-		if ( $thumb_url ) {
+		if ( ! empty( $thumb_url ) ) {
 			$img = $thumb_url;
 		}
 
@@ -364,6 +364,9 @@ if ( ! function_exists( 'beercan_is_a_loop' ) ) :
 endif;
 
 if ( ! function_exists( 'beercan_no_header' ) ) {
+	/**
+	 * Checks if the page template should have a header.
+	 */
 	function beercan_no_header() {
 		 if ( get_page_template_slug() == 'page-templates/page-no-header.php' ) {
 			return true;

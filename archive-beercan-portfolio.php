@@ -13,7 +13,7 @@ get_header();
 <div id="content-inner" class="grid-container">
 	<div class="grid-x grid-padding-x grid-padding-y grid-margin-x">
 		<div id="primary" class="content-area cell auto">
-			<main id="main" class="site-main grid-x grid-padding-y grid-margin-x grid-margin-y large-up-2">
+			<main id="main" class="site-main grid-x grid-padding-y grid-margin-x grid-margin-y large-up-3">
 				<?php
 				if ( have_posts() ) :
 					/* Start the Loop */
@@ -32,7 +32,6 @@ get_header();
 				?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		<?php get_sidebar(); ?>
 	</div>
 </div>
 <?php

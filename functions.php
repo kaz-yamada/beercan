@@ -222,6 +222,12 @@ require get_template_directory() . '/inc/template-tags.php';
 require get_template_directory() . '/inc/template-functions.php';
 
 /**
+ * Functions for portfolio custom post type.
+ */
+require get_template_directory() . '/inc/class-beercan-portfolio.php';
+
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
@@ -233,7 +239,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	include get_template_directory() . '/inc/jetpack.php';
 }
 
-if ( ! function_exists('get_theme_author_url')) :
+if ( ! function_exists( 'get_theme_author_url' ) ) :
 	/**
 	 * Get the url for theme author.
 	 */

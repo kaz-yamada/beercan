@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 <aside id="secondary" class="widget-area medium-4 cell">
-	<div class="grid-y grid-padding-x grid-padding-y grid-margin-y grid-margin-x">
+	<div class="grid-y grid-padding-x grid-padding-y grid-margin-y">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
 </aside><!-- #secondary -->
