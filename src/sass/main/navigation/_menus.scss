@@ -98,13 +98,11 @@ $stuck-height: 48px;
 			height: auto;
 			transition: ease min-height 0.3s;
 			min-height: $stuck-height;
-			background: $body-background;
 		}
 
 		&.is-stuck {
 			min-height: $stuck-height;
 			margin-top: $stuck-height;
-			background: $body-background;
 
 			#primary-menu {
 				height: calc(100vh - 48px);
