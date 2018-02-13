@@ -53,8 +53,7 @@ add_action( 'after_setup_theme', 'beercan_jetpack_setup' );
  */
 function beercan_portfolio_classes( $class, $portfolio_index_number, $columns ) {
 	$colsize = 12 / $columns;
-
-	return "cell medium-{$colsize}";
+	return "cell medium-{$colsize} small-auto";
 }
 
 add_filter( 'portfolio-project-post-class', 'beercan_portfolio_classes', 10, 3 );
