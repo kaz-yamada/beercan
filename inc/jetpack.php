@@ -44,6 +44,22 @@ function beercan_jetpack_setup() {
 add_action( 'after_setup_theme', 'beercan_jetpack_setup' );
 
 /**
+ * Filter for portfolio shortcode css classes.
+ *
+ * @param string $class default css classes.
+ * @param int    $portfolio_index_number current index number of loop.
+ * @param int    $columns total columns in portfolio loop.
+ * @return string css class to apply on portfolio post.
+ */
+function beercan_portfolio_classes( $class, $portfolio_index_number, $columns ) {
+	$colsize = 12 / $columns;
+
+	return "cell medium-{$colsize}";
+}
+
+add_filter( 'portfolio-project-post-class', 'beercan_portfolio_classes', 10, 3 );
+
+/**
  * Custom render function for Infinite Scroll.
  */
 function beercan_infinite_scroll_render() {

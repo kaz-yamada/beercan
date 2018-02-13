@@ -224,7 +224,7 @@ require get_template_directory() . '/inc/template-functions.php';
 /**
  * Functions for portfolio custom post type.
  */
-require get_template_directory() . '/inc/class-beercan-portfolio.php';
+// require get_template_directory() . '/inc/class-beercan-portfolio.php';
 
 
 /**

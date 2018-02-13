@@ -10,6 +10,8 @@ $( document ).foundation();
 
 $( document ).ready( function() {
     scrollTopButton.hide();
+
+    $( '.jetpack-portfolio-shortcode' ).addClass( 'grid-x grid-margin-x' );
 } );
 
 $( window ).scroll( function() {
