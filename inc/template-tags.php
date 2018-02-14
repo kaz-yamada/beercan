@@ -140,11 +140,14 @@ if ( ! function_exists( 'beercan_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = sprintf(
-			/* translators: %s: post date. */
-			esc_html( '%s' ),
-			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-		);
+		if ( ! is_single() ) {
+			$posted_on = sprintf(
+				/* translators: %s: post date. */
+				esc_html( '%s' ), '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+			);
+		} else {
+			$posted_on = $time_string;
+		}
 
 		$author_id   = intval( get_post_field( 'post_author', get_the_ID() ) );
 		$author_name = get_the_author_meta( 'display_name', $author_id );

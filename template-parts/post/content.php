@@ -17,11 +17,11 @@
 		?>
 		<div class="entry-content cell">
 			<?php
-			if ( ! is_singular() ) :
+			if ( ! is_single() ) :
 				the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 			endif;
 
-			if ( 'post' === get_post_type() ) :
+			if ( 'post' === get_post_type() && ! is_single() ) :
 				?>
 				<div class="entry-meta">
 					<?php beercan_posted_on(); ?>
