@@ -44,9 +44,9 @@ module.exports = {
      *
      * @type {Object}
      */
-    externals: {
-        jquery: 'jQuery',
-    },
+    // externals: {
+    //     jquery: 'jQuery',
+    // },
 
     /**
      * Settings of other build features.

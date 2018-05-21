@@ -1,89 +1,84 @@
 .comment-content a {
-	word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+  display: block;
 }
 
 .comments-area {
-	.comment-list {
-		margin: 1em 0;
-		list-style-type: none;
+  .comment-list {
+    margin: 1em 0;
+    list-style-type: none;
 
-		.comment {
-			article {
-				@include shadow-border(rgba(0,0,0,0.5));
-				margin-bottom: 1em;
-				padding: 1em;
+    .comment {
+      article {
+        @include shadow-border(rgba(0, 0, 0, 0.5));
+        margin-bottom: 1em;
+        padding: 1em;
 
-				.comment-meta {
-					margin-bottom: 1em;
+        .comment-meta {
+          margin-bottom: 1em;
 
-					& > div {
-						height: 30px;
-					}
+          & > div {
+            height: 30px;
+          }
 
-					.comment-author {
-						img {
-							float: left;
-							margin-right: 1em;
-						}
+          .comment-author {
+            img {
+              float: left;
+              margin-right: 1em;
+            }
 
-						.fn,
-						.says {
-							display: inline-block;
-						}
-					}
-				}
-			}
+            .fn,
+            .says {
+              display: inline-block;
+            }
+          }
+        }
+      }
 
-			&.bypostauthor {
-				article {
-					border-top: solid 5px $color__link;
-					border-bottom: solid 5px $color__link;
+      &.bypostauthor {
+        article {
+          border: solid 5px $color__link;
+        }
+      }
+    }
 
-					.fn {
+    .children {
+      list-style: none;
+    }
+  }
+  @include breakpoint(small down) {
+    .comment-list {
+      .comment {
+        article {
+          .comment-meta {
+            height: auto;
+            text-align: center;
 
-					}
-				}
-			}
-		}
+            .comment-author {
+              height: auto;
+              text-align: center;
 
-		.children {
-			list-style: none;
-		}
-	}
-	@include breakpoint(small down) {
-		.comment-list {
-			.comment {
-				article {
-					.comment-meta {
-						height: auto;
-						text-align: center;
+              img {
+                float: none;
+                margin: 0 auto 1em;
+                display: block;
+              }
 
-						.comment-author {
-							height: auto;
-							text-align: center;
+              .fn,
+              .says {
+                display: inline-block;
+              }
+            }
 
-							img {
-								float: none;
-								margin: 0 auto 1em;
-								display: block;
-							}
-
-							.fn,
-							.says {
-								display: inline-block;
-							}
-						}
-
-						.comment-metadata {
-							height: auto;
-						}
-					}
-				}
-			}
-		}
-	}
+            .comment-metadata {
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }

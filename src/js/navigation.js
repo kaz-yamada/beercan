@@ -4,8 +4,9 @@
  *
  * Contains handlers for navigation.
  */
-let $ = require( 'jquery' );
-let MotionUI = require( 'motion-ui' );
+import $ from "jquery";
+import MotionUI from "motion-ui";
+
 let primaryMenu = $( '#primary-menu' );
 
 function initMainNavigation( container ) {

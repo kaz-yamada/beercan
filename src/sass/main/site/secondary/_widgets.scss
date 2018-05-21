@@ -1,80 +1,86 @@
 .widget {
-	margin: 0 0 1.5em;
-	/* Make sure select elements fit in widgets. */
-	select {
-		max-width: 100%;
-	}
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */
+  select {
+    max-width: 100%;
+  }
 }
 
 .search-form {
-	position: relative;
+  position: relative;
 
-	.search-field {
-		height: 42px;
-		line-height: 1;
-		padding-right: 66px;
-		padding-left: 12px;
-		margin: auto;
-	}
+  .search-field {
+    height: 42px;
+    line-height: 1;
+    padding-right: 66px;
+    padding-left: 12px;
+    margin: auto;
+  }
 
-	.search-submit {
-		position: absolute;
-		right: 0;
-		top: 0;
-		height: 42px;
-		line-height: 1;
-		padding: 0.8em 1em;
-		cursor: pointer;
+  .search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 42px;
+    line-height: 1;
+    padding: 0.8em 1em;
+    cursor: pointer;
 
-		&:before {
-			position: absolute;
-			line-height: 42px;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-		}
-	}
+    &:before {
+      position: absolute;
+      line-height: 42px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
 }
 
 .widget_recent_entries {
-	@include widget-icon('\f15c');
+  @include widget-icon("\f15c");
 
-	ul {
-		list-style: none;
-		margin-left: 0;
-	}
+  ul {
+    list-style: none;
+    margin-left: 0;
+  }
 }
 
 .widget_archive {
-	@include widget-icon('\f073');
+  @include widget-icon("\f073");
 }
 
 .widget_categories {
-	ul {
-		display: flex;
-		flex-flow: row wrap;
+  ul {
+    display: flex;
+    flex-flow: row wrap;
 
-		li {
-			border: solid 1px $light-gray;
-			margin-right: 0.5em;
-			margin-bottom: 0.5em;
-			padding: 0.4em;
-		}
-	}
+    li {
+      border: solid 1px $light-gray;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
+      padding: 0.4em;
+    }
+  }
+}
+
+.widget {
+  .social-icons-lists {
+    margin: 0;
+  }
 }
 
 .widget_recent_comments {
-	@include widget-icon('\f27b')
+  @include widget-icon("\f27b");
 }
 
 .widget_meta {
-	@include widget-icon('\f129');
+  @include widget-icon("\f129");
 }
 
 .tagcloud {
-	a {
-		font-size: 0.9rem !important;
-		/* Force same size tags */
-	}
+  a {
+    font-size: 0.9rem !important;
+    /* Force same size tags */
+  }
 }

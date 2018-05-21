@@ -466,7 +466,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Raleway", Helvetica, "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Helvetica, "Roboto", Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -2164,7 +2164,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Raleway", Helvetica, "Roboto", Arial, sans-serif;
+  font-family: "Roboto", Helvetica, "Roboto", Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;
@@ -2663,18 +2663,18 @@ input[type="submit"] {
   cursor: pointer;
   background-color: #f76e00;
   color: #fefefe; }
-  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] button, [data-whatinput='mouse']
-  input[type="button"], [data-whatinput='mouse']
-  input[type="reset"], [data-whatinput='mouse']
-  input[type="submit"] {
+  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] button,
+  [data-whatinput='mouse'] input[type="button"],
+  [data-whatinput='mouse'] input[type="reset"],
+  [data-whatinput='mouse'] input[type="submit"] {
     outline: 0; }
   .button:hover, button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover, .button:focus, button:focus,
-  input[type="button"]:focus,
-  input[type="reset"]:focus,
-  input[type="submit"]:focus {
+  input:hover[type="button"],
+  input:hover[type="reset"],
+  input:hover[type="submit"], .button:focus, button:focus,
+  input:focus[type="button"],
+  input:focus[type="reset"],
+  input:focus[type="submit"] {
     background-color: #b95300;
     color: #fefefe; }
   .button.tiny, button.tiny,
@@ -2707,12 +2707,12 @@ input[type="submit"] {
     background-color: #f76e00;
     color: #0a0a0a; }
     .button.primary:hover, button.primary:hover,
-    input.primary[type="button"]:hover,
-    input.primary[type="reset"]:hover,
-    input.primary[type="submit"]:hover, .button.primary:focus, button.primary:focus,
-    input.primary[type="button"]:focus,
-    input.primary[type="reset"]:focus,
-    input.primary[type="submit"]:focus {
+    input.primary:hover[type="button"],
+    input.primary:hover[type="reset"],
+    input.primary:hover[type="submit"], .button.primary:focus, button.primary:focus,
+    input.primary:focus[type="button"],
+    input.primary:focus[type="reset"],
+    input.primary:focus[type="submit"] {
       background-color: #c65800;
       color: #0a0a0a; }
   .button.secondary, button.secondary,
@@ -2722,12 +2722,12 @@ input[type="submit"] {
     background-color: #4717f6;
     color: #fefefe; }
     .button.secondary:hover, button.secondary:hover,
-    input.secondary[type="button"]:hover,
-    input.secondary[type="reset"]:hover,
-    input.secondary[type="submit"]:hover, .button.secondary:focus, button.secondary:focus,
-    input.secondary[type="button"]:focus,
-    input.secondary[type="reset"]:focus,
-    input.secondary[type="submit"]:focus {
+    input.secondary:hover[type="button"],
+    input.secondary:hover[type="reset"],
+    input.secondary:hover[type="submit"], .button.secondary:focus, button.secondary:focus,
+    input.secondary:focus[type="button"],
+    input.secondary:focus[type="reset"],
+    input.secondary:focus[type="submit"] {
       background-color: #3308cf;
       color: #fefefe; }
   .button.success, button.success,
@@ -2737,12 +2737,12 @@ input[type="submit"] {
     background-color: #3adb76;
     color: #0a0a0a; }
     .button.success:hover, button.success:hover,
-    input.success[type="button"]:hover,
-    input.success[type="reset"]:hover,
-    input.success[type="submit"]:hover, .button.success:focus, button.success:focus,
-    input.success[type="button"]:focus,
-    input.success[type="reset"]:focus,
-    input.success[type="submit"]:focus {
+    input.success:hover[type="button"],
+    input.success:hover[type="reset"],
+    input.success:hover[type="submit"], .button.success:focus, button.success:focus,
+    input.success:focus[type="button"],
+    input.success:focus[type="reset"],
+    input.success:focus[type="submit"] {
       background-color: #22bb5b;
       color: #0a0a0a; }
   .button.warning, button.warning,
@@ -2752,12 +2752,12 @@ input[type="submit"] {
     background-color: #ffae00;
     color: #0a0a0a; }
     .button.warning:hover, button.warning:hover,
-    input.warning[type="button"]:hover,
-    input.warning[type="reset"]:hover,
-    input.warning[type="submit"]:hover, .button.warning:focus, button.warning:focus,
-    input.warning[type="button"]:focus,
-    input.warning[type="reset"]:focus,
-    input.warning[type="submit"]:focus {
+    input.warning:hover[type="button"],
+    input.warning:hover[type="reset"],
+    input.warning:hover[type="submit"], .button.warning:focus, button.warning:focus,
+    input.warning:focus[type="button"],
+    input.warning:focus[type="reset"],
+    input.warning:focus[type="submit"] {
       background-color: #cc8b00;
       color: #0a0a0a; }
   .button.alert, button.alert,
@@ -2767,12 +2767,12 @@ input[type="submit"] {
     background-color: #cc4b37;
     color: #fefefe; }
     .button.alert:hover, button.alert:hover,
-    input.alert[type="button"]:hover,
-    input.alert[type="reset"]:hover,
-    input.alert[type="submit"]:hover, .button.alert:focus, button.alert:focus,
-    input.alert[type="button"]:focus,
-    input.alert[type="reset"]:focus,
-    input.alert[type="submit"]:focus {
+    input.alert:hover[type="button"],
+    input.alert:hover[type="reset"],
+    input.alert:hover[type="submit"], .button.alert:focus, button.alert:focus,
+    input.alert:focus[type="button"],
+    input.alert:focus[type="reset"],
+    input.alert:focus[type="submit"] {
       background-color: #a53b2a;
       color: #fefefe; }
   .button.disabled, button.disabled,
@@ -2788,21 +2788,21 @@ input[type="submit"] {
     input.disabled[type="button"],
     input.disabled[type="reset"],
     input.disabled[type="submit"], .button.disabled:hover, button.disabled:hover,
-    input.disabled[type="button"]:hover,
-    input.disabled[type="reset"]:hover,
-    input.disabled[type="submit"]:hover, .button.disabled:focus, button.disabled:focus,
-    input.disabled[type="button"]:focus,
-    input.disabled[type="reset"]:focus,
-    input.disabled[type="submit"]:focus, .button[disabled], button[disabled],
+    input.disabled:hover[type="button"],
+    input.disabled:hover[type="reset"],
+    input.disabled:hover[type="submit"], .button.disabled:focus, button.disabled:focus,
+    input.disabled:focus[type="button"],
+    input.disabled:focus[type="reset"],
+    input.disabled:focus[type="submit"], .button[disabled], button[disabled],
     input[disabled][type="button"],
     input[disabled][type="reset"],
     input[disabled][type="submit"], .button[disabled]:hover, button[disabled]:hover,
-    input[disabled][type="button"]:hover,
-    input[disabled][type="reset"]:hover,
-    input[disabled][type="submit"]:hover, .button[disabled]:focus, button[disabled]:focus,
-    input[disabled][type="button"]:focus,
-    input[disabled][type="reset"]:focus,
-    input[disabled][type="submit"]:focus {
+    input[disabled]:hover[type="button"],
+    input[disabled]:hover[type="reset"],
+    input[disabled]:hover[type="submit"], .button[disabled]:focus, button[disabled]:focus,
+    input[disabled]:focus[type="button"],
+    input[disabled]:focus[type="reset"],
+    input[disabled]:focus[type="submit"] {
       background-color: #f76e00;
       color: #fefefe; }
     .button.disabled.primary, button.disabled.primary,
@@ -2818,21 +2818,21 @@ input[type="submit"] {
       input.disabled.primary[type="button"],
       input.disabled.primary[type="reset"],
       input.disabled.primary[type="submit"], .button.disabled.primary:hover, button.disabled.primary:hover,
-      input.disabled.primary[type="button"]:hover,
-      input.disabled.primary[type="reset"]:hover,
-      input.disabled.primary[type="submit"]:hover, .button.disabled.primary:focus, button.disabled.primary:focus,
-      input.disabled.primary[type="button"]:focus,
-      input.disabled.primary[type="reset"]:focus,
-      input.disabled.primary[type="submit"]:focus, .button[disabled].primary, button[disabled].primary,
+      input.disabled.primary:hover[type="button"],
+      input.disabled.primary:hover[type="reset"],
+      input.disabled.primary:hover[type="submit"], .button.disabled.primary:focus, button.disabled.primary:focus,
+      input.disabled.primary:focus[type="button"],
+      input.disabled.primary:focus[type="reset"],
+      input.disabled.primary:focus[type="submit"], .button[disabled].primary, button[disabled].primary,
       input[disabled].primary[type="button"],
       input[disabled].primary[type="reset"],
       input[disabled].primary[type="submit"], .button[disabled].primary:hover, button[disabled].primary:hover,
-      input[disabled].primary[type="button"]:hover,
-      input[disabled].primary[type="reset"]:hover,
-      input[disabled].primary[type="submit"]:hover, .button[disabled].primary:focus, button[disabled].primary:focus,
-      input[disabled].primary[type="button"]:focus,
-      input[disabled].primary[type="reset"]:focus,
-      input[disabled].primary[type="submit"]:focus {
+      input[disabled].primary:hover[type="button"],
+      input[disabled].primary:hover[type="reset"],
+      input[disabled].primary:hover[type="submit"], .button[disabled].primary:focus, button[disabled].primary:focus,
+      input[disabled].primary:focus[type="button"],
+      input[disabled].primary:focus[type="reset"],
+      input[disabled].primary:focus[type="submit"] {
         background-color: #f76e00;
         color: #0a0a0a; }
     .button.disabled.secondary, button.disabled.secondary,
@@ -2848,21 +2848,21 @@ input[type="submit"] {
       input.disabled.secondary[type="button"],
       input.disabled.secondary[type="reset"],
       input.disabled.secondary[type="submit"], .button.disabled.secondary:hover, button.disabled.secondary:hover,
-      input.disabled.secondary[type="button"]:hover,
-      input.disabled.secondary[type="reset"]:hover,
-      input.disabled.secondary[type="submit"]:hover, .button.disabled.secondary:focus, button.disabled.secondary:focus,
-      input.disabled.secondary[type="button"]:focus,
-      input.disabled.secondary[type="reset"]:focus,
-      input.disabled.secondary[type="submit"]:focus, .button[disabled].secondary, button[disabled].secondary,
+      input.disabled.secondary:hover[type="button"],
+      input.disabled.secondary:hover[type="reset"],
+      input.disabled.secondary:hover[type="submit"], .button.disabled.secondary:focus, button.disabled.secondary:focus,
+      input.disabled.secondary:focus[type="button"],
+      input.disabled.secondary:focus[type="reset"],
+      input.disabled.secondary:focus[type="submit"], .button[disabled].secondary, button[disabled].secondary,
       input[disabled].secondary[type="button"],
       input[disabled].secondary[type="reset"],
       input[disabled].secondary[type="submit"], .button[disabled].secondary:hover, button[disabled].secondary:hover,
-      input[disabled].secondary[type="button"]:hover,
-      input[disabled].secondary[type="reset"]:hover,
-      input[disabled].secondary[type="submit"]:hover, .button[disabled].secondary:focus, button[disabled].secondary:focus,
-      input[disabled].secondary[type="button"]:focus,
-      input[disabled].secondary[type="reset"]:focus,
-      input[disabled].secondary[type="submit"]:focus {
+      input[disabled].secondary:hover[type="button"],
+      input[disabled].secondary:hover[type="reset"],
+      input[disabled].secondary:hover[type="submit"], .button[disabled].secondary:focus, button[disabled].secondary:focus,
+      input[disabled].secondary:focus[type="button"],
+      input[disabled].secondary:focus[type="reset"],
+      input[disabled].secondary:focus[type="submit"] {
         background-color: #4717f6;
         color: #fefefe; }
     .button.disabled.success, button.disabled.success,
@@ -2878,21 +2878,21 @@ input[type="submit"] {
       input.disabled.success[type="button"],
       input.disabled.success[type="reset"],
       input.disabled.success[type="submit"], .button.disabled.success:hover, button.disabled.success:hover,
-      input.disabled.success[type="button"]:hover,
-      input.disabled.success[type="reset"]:hover,
-      input.disabled.success[type="submit"]:hover, .button.disabled.success:focus, button.disabled.success:focus,
-      input.disabled.success[type="button"]:focus,
-      input.disabled.success[type="reset"]:focus,
-      input.disabled.success[type="submit"]:focus, .button[disabled].success, button[disabled].success,
+      input.disabled.success:hover[type="button"],
+      input.disabled.success:hover[type="reset"],
+      input.disabled.success:hover[type="submit"], .button.disabled.success:focus, button.disabled.success:focus,
+      input.disabled.success:focus[type="button"],
+      input.disabled.success:focus[type="reset"],
+      input.disabled.success:focus[type="submit"], .button[disabled].success, button[disabled].success,
       input[disabled].success[type="button"],
       input[disabled].success[type="reset"],
       input[disabled].success[type="submit"], .button[disabled].success:hover, button[disabled].success:hover,
-      input[disabled].success[type="button"]:hover,
-      input[disabled].success[type="reset"]:hover,
-      input[disabled].success[type="submit"]:hover, .button[disabled].success:focus, button[disabled].success:focus,
-      input[disabled].success[type="button"]:focus,
-      input[disabled].success[type="reset"]:focus,
-      input[disabled].success[type="submit"]:focus {
+      input[disabled].success:hover[type="button"],
+      input[disabled].success:hover[type="reset"],
+      input[disabled].success:hover[type="submit"], .button[disabled].success:focus, button[disabled].success:focus,
+      input[disabled].success:focus[type="button"],
+      input[disabled].success:focus[type="reset"],
+      input[disabled].success:focus[type="submit"] {
         background-color: #3adb76;
         color: #0a0a0a; }
     .button.disabled.warning, button.disabled.warning,
@@ -2908,21 +2908,21 @@ input[type="submit"] {
       input.disabled.warning[type="button"],
       input.disabled.warning[type="reset"],
       input.disabled.warning[type="submit"], .button.disabled.warning:hover, button.disabled.warning:hover,
-      input.disabled.warning[type="button"]:hover,
-      input.disabled.warning[type="reset"]:hover,
-      input.disabled.warning[type="submit"]:hover, .button.disabled.warning:focus, button.disabled.warning:focus,
-      input.disabled.warning[type="button"]:focus,
-      input.disabled.warning[type="reset"]:focus,
-      input.disabled.warning[type="submit"]:focus, .button[disabled].warning, button[disabled].warning,
+      input.disabled.warning:hover[type="button"],
+      input.disabled.warning:hover[type="reset"],
+      input.disabled.warning:hover[type="submit"], .button.disabled.warning:focus, button.disabled.warning:focus,
+      input.disabled.warning:focus[type="button"],
+      input.disabled.warning:focus[type="reset"],
+      input.disabled.warning:focus[type="submit"], .button[disabled].warning, button[disabled].warning,
       input[disabled].warning[type="button"],
       input[disabled].warning[type="reset"],
       input[disabled].warning[type="submit"], .button[disabled].warning:hover, button[disabled].warning:hover,
-      input[disabled].warning[type="button"]:hover,
-      input[disabled].warning[type="reset"]:hover,
-      input[disabled].warning[type="submit"]:hover, .button[disabled].warning:focus, button[disabled].warning:focus,
-      input[disabled].warning[type="button"]:focus,
-      input[disabled].warning[type="reset"]:focus,
-      input[disabled].warning[type="submit"]:focus {
+      input[disabled].warning:hover[type="button"],
+      input[disabled].warning:hover[type="reset"],
+      input[disabled].warning:hover[type="submit"], .button[disabled].warning:focus, button[disabled].warning:focus,
+      input[disabled].warning:focus[type="button"],
+      input[disabled].warning:focus[type="reset"],
+      input[disabled].warning:focus[type="submit"] {
         background-color: #ffae00;
         color: #0a0a0a; }
     .button.disabled.alert, button.disabled.alert,
@@ -2938,21 +2938,21 @@ input[type="submit"] {
       input.disabled.alert[type="button"],
       input.disabled.alert[type="reset"],
       input.disabled.alert[type="submit"], .button.disabled.alert:hover, button.disabled.alert:hover,
-      input.disabled.alert[type="button"]:hover,
-      input.disabled.alert[type="reset"]:hover,
-      input.disabled.alert[type="submit"]:hover, .button.disabled.alert:focus, button.disabled.alert:focus,
-      input.disabled.alert[type="button"]:focus,
-      input.disabled.alert[type="reset"]:focus,
-      input.disabled.alert[type="submit"]:focus, .button[disabled].alert, button[disabled].alert,
+      input.disabled.alert:hover[type="button"],
+      input.disabled.alert:hover[type="reset"],
+      input.disabled.alert:hover[type="submit"], .button.disabled.alert:focus, button.disabled.alert:focus,
+      input.disabled.alert:focus[type="button"],
+      input.disabled.alert:focus[type="reset"],
+      input.disabled.alert:focus[type="submit"], .button[disabled].alert, button[disabled].alert,
       input[disabled].alert[type="button"],
       input[disabled].alert[type="reset"],
       input[disabled].alert[type="submit"], .button[disabled].alert:hover, button[disabled].alert:hover,
-      input[disabled].alert[type="button"]:hover,
-      input[disabled].alert[type="reset"]:hover,
-      input[disabled].alert[type="submit"]:hover, .button[disabled].alert:focus, button[disabled].alert:focus,
-      input[disabled].alert[type="button"]:focus,
-      input[disabled].alert[type="reset"]:focus,
-      input[disabled].alert[type="submit"]:focus {
+      input[disabled].alert:hover[type="button"],
+      input[disabled].alert:hover[type="reset"],
+      input[disabled].alert:hover[type="submit"], .button[disabled].alert:focus, button[disabled].alert:focus,
+      input[disabled].alert:focus[type="button"],
+      input[disabled].alert:focus[type="reset"],
+      input[disabled].alert:focus[type="submit"] {
         background-color: #cc4b37;
         color: #fefefe; }
   .button.hollow, button.hollow,
@@ -2965,55 +2965,55 @@ input[type="submit"] {
     input.hollow[type="button"],
     input.hollow[type="reset"],
     input.hollow[type="submit"], .button.hollow:hover, button.hollow:hover,
-    input.hollow[type="button"]:hover,
-    input.hollow[type="reset"]:hover,
-    input.hollow[type="submit"]:hover, .button.hollow:focus, button.hollow:focus,
-    input.hollow[type="button"]:focus,
-    input.hollow[type="reset"]:focus,
-    input.hollow[type="submit"]:focus {
+    input.hollow:hover[type="button"],
+    input.hollow:hover[type="reset"],
+    input.hollow:hover[type="submit"], .button.hollow:focus, button.hollow:focus,
+    input.hollow:focus[type="button"],
+    input.hollow:focus[type="reset"],
+    input.hollow:focus[type="submit"] {
       background-color: transparent; }
     .button.hollow.disabled, button.hollow.disabled,
     input.hollow.disabled[type="button"],
     input.hollow.disabled[type="reset"],
     input.hollow.disabled[type="submit"], .button.hollow.disabled:hover, button.hollow.disabled:hover,
-    input.hollow.disabled[type="button"]:hover,
-    input.hollow.disabled[type="reset"]:hover,
-    input.hollow.disabled[type="submit"]:hover, .button.hollow.disabled:focus, button.hollow.disabled:focus,
-    input.hollow.disabled[type="button"]:focus,
-    input.hollow.disabled[type="reset"]:focus,
-    input.hollow.disabled[type="submit"]:focus, .button.hollow[disabled], button.hollow[disabled],
+    input.hollow.disabled:hover[type="button"],
+    input.hollow.disabled:hover[type="reset"],
+    input.hollow.disabled:hover[type="submit"], .button.hollow.disabled:focus, button.hollow.disabled:focus,
+    input.hollow.disabled:focus[type="button"],
+    input.hollow.disabled:focus[type="reset"],
+    input.hollow.disabled:focus[type="submit"], .button.hollow[disabled], button.hollow[disabled],
     input.hollow[disabled][type="button"],
     input.hollow[disabled][type="reset"],
     input.hollow[disabled][type="submit"], .button.hollow[disabled]:hover, button.hollow[disabled]:hover,
-    input.hollow[disabled][type="button"]:hover,
-    input.hollow[disabled][type="reset"]:hover,
-    input.hollow[disabled][type="submit"]:hover, .button.hollow[disabled]:focus, button.hollow[disabled]:focus,
-    input.hollow[disabled][type="button"]:focus,
-    input.hollow[disabled][type="reset"]:focus,
-    input.hollow[disabled][type="submit"]:focus {
+    input.hollow[disabled]:hover[type="button"],
+    input.hollow[disabled]:hover[type="reset"],
+    input.hollow[disabled]:hover[type="submit"], .button.hollow[disabled]:focus, button.hollow[disabled]:focus,
+    input.hollow[disabled]:focus[type="button"],
+    input.hollow[disabled]:focus[type="reset"],
+    input.hollow[disabled]:focus[type="submit"] {
       background-color: transparent; }
     .button.hollow:hover, button.hollow:hover,
-    input.hollow[type="button"]:hover,
-    input.hollow[type="reset"]:hover,
-    input.hollow[type="submit"]:hover, .button.hollow:focus, button.hollow:focus,
-    input.hollow[type="button"]:focus,
-    input.hollow[type="reset"]:focus,
-    input.hollow[type="submit"]:focus {
+    input.hollow:hover[type="button"],
+    input.hollow:hover[type="reset"],
+    input.hollow:hover[type="submit"], .button.hollow:focus, button.hollow:focus,
+    input.hollow:focus[type="button"],
+    input.hollow:focus[type="reset"],
+    input.hollow:focus[type="submit"] {
       border-color: #7c3700;
       color: #7c3700; }
       .button.hollow:hover.disabled, button.hollow:hover.disabled,
-      input.hollow[type="button"]:hover.disabled,
-      input.hollow[type="reset"]:hover.disabled,
-      input.hollow[type="submit"]:hover.disabled, .button.hollow:hover[disabled], button.hollow:hover[disabled],
-      input.hollow[type="button"]:hover[disabled],
-      input.hollow[type="reset"]:hover[disabled],
-      input.hollow[type="submit"]:hover[disabled], .button.hollow:focus.disabled, button.hollow:focus.disabled,
-      input.hollow[type="button"]:focus.disabled,
-      input.hollow[type="reset"]:focus.disabled,
-      input.hollow[type="submit"]:focus.disabled, .button.hollow:focus[disabled], button.hollow:focus[disabled],
-      input.hollow[type="button"]:focus[disabled],
-      input.hollow[type="reset"]:focus[disabled],
-      input.hollow[type="submit"]:focus[disabled] {
+      input.hollow:hover.disabled[type="button"],
+      input.hollow:hover.disabled[type="reset"],
+      input.hollow:hover.disabled[type="submit"], .button.hollow:hover[disabled], button.hollow:hover[disabled],
+      input.hollow:hover[disabled][type="button"],
+      input.hollow:hover[disabled][type="reset"],
+      input.hollow:hover[disabled][type="submit"], .button.hollow:focus.disabled, button.hollow:focus.disabled,
+      input.hollow:focus.disabled[type="button"],
+      input.hollow:focus.disabled[type="reset"],
+      input.hollow:focus.disabled[type="submit"], .button.hollow:focus[disabled], button.hollow:focus[disabled],
+      input.hollow:focus[disabled][type="button"],
+      input.hollow:focus[disabled][type="reset"],
+      input.hollow:focus[disabled][type="submit"] {
         border: 1px solid #f76e00;
         color: #f76e00; }
     .button.hollow.primary, button.hollow.primary,
@@ -3023,27 +3023,27 @@ input[type="submit"] {
       border: 1px solid #f76e00;
       color: #f76e00; }
       .button.hollow.primary:hover, button.hollow.primary:hover,
-      input.hollow.primary[type="button"]:hover,
-      input.hollow.primary[type="reset"]:hover,
-      input.hollow.primary[type="submit"]:hover, .button.hollow.primary:focus, button.hollow.primary:focus,
-      input.hollow.primary[type="button"]:focus,
-      input.hollow.primary[type="reset"]:focus,
-      input.hollow.primary[type="submit"]:focus {
+      input.hollow.primary:hover[type="button"],
+      input.hollow.primary:hover[type="reset"],
+      input.hollow.primary:hover[type="submit"], .button.hollow.primary:focus, button.hollow.primary:focus,
+      input.hollow.primary:focus[type="button"],
+      input.hollow.primary:focus[type="reset"],
+      input.hollow.primary:focus[type="submit"] {
         border-color: #7c3700;
         color: #7c3700; }
         .button.hollow.primary:hover.disabled, button.hollow.primary:hover.disabled,
-        input.hollow.primary[type="button"]:hover.disabled,
-        input.hollow.primary[type="reset"]:hover.disabled,
-        input.hollow.primary[type="submit"]:hover.disabled, .button.hollow.primary:hover[disabled], button.hollow.primary:hover[disabled],
-        input.hollow.primary[type="button"]:hover[disabled],
-        input.hollow.primary[type="reset"]:hover[disabled],
-        input.hollow.primary[type="submit"]:hover[disabled], .button.hollow.primary:focus.disabled, button.hollow.primary:focus.disabled,
-        input.hollow.primary[type="button"]:focus.disabled,
-        input.hollow.primary[type="reset"]:focus.disabled,
-        input.hollow.primary[type="submit"]:focus.disabled, .button.hollow.primary:focus[disabled], button.hollow.primary:focus[disabled],
-        input.hollow.primary[type="button"]:focus[disabled],
-        input.hollow.primary[type="reset"]:focus[disabled],
-        input.hollow.primary[type="submit"]:focus[disabled] {
+        input.hollow.primary:hover.disabled[type="button"],
+        input.hollow.primary:hover.disabled[type="reset"],
+        input.hollow.primary:hover.disabled[type="submit"], .button.hollow.primary:hover[disabled], button.hollow.primary:hover[disabled],
+        input.hollow.primary:hover[disabled][type="button"],
+        input.hollow.primary:hover[disabled][type="reset"],
+        input.hollow.primary:hover[disabled][type="submit"], .button.hollow.primary:focus.disabled, button.hollow.primary:focus.disabled,
+        input.hollow.primary:focus.disabled[type="button"],
+        input.hollow.primary:focus.disabled[type="reset"],
+        input.hollow.primary:focus.disabled[type="submit"], .button.hollow.primary:focus[disabled], button.hollow.primary:focus[disabled],
+        input.hollow.primary:focus[disabled][type="button"],
+        input.hollow.primary:focus[disabled][type="reset"],
+        input.hollow.primary:focus[disabled][type="submit"] {
           border: 1px solid #f76e00;
           color: #f76e00; }
     .button.hollow.secondary, button.hollow.secondary,
@@ -3053,27 +3053,27 @@ input[type="submit"] {
       border: 1px solid #4717f6;
       color: #4717f6; }
       .button.hollow.secondary:hover, button.hollow.secondary:hover,
-      input.hollow.secondary[type="button"]:hover,
-      input.hollow.secondary[type="reset"]:hover,
-      input.hollow.secondary[type="submit"]:hover, .button.hollow.secondary:focus, button.hollow.secondary:focus,
-      input.hollow.secondary[type="button"]:focus,
-      input.hollow.secondary[type="reset"]:focus,
-      input.hollow.secondary[type="submit"]:focus {
+      input.hollow.secondary:hover[type="button"],
+      input.hollow.secondary:hover[type="reset"],
+      input.hollow.secondary:hover[type="submit"], .button.hollow.secondary:focus, button.hollow.secondary:focus,
+      input.hollow.secondary:focus[type="button"],
+      input.hollow.secondary:focus[type="reset"],
+      input.hollow.secondary:focus[type="submit"] {
         border-color: #200581;
         color: #200581; }
         .button.hollow.secondary:hover.disabled, button.hollow.secondary:hover.disabled,
-        input.hollow.secondary[type="button"]:hover.disabled,
-        input.hollow.secondary[type="reset"]:hover.disabled,
-        input.hollow.secondary[type="submit"]:hover.disabled, .button.hollow.secondary:hover[disabled], button.hollow.secondary:hover[disabled],
-        input.hollow.secondary[type="button"]:hover[disabled],
-        input.hollow.secondary[type="reset"]:hover[disabled],
-        input.hollow.secondary[type="submit"]:hover[disabled], .button.hollow.secondary:focus.disabled, button.hollow.secondary:focus.disabled,
-        input.hollow.secondary[type="button"]:focus.disabled,
-        input.hollow.secondary[type="reset"]:focus.disabled,
-        input.hollow.secondary[type="submit"]:focus.disabled, .button.hollow.secondary:focus[disabled], button.hollow.secondary:focus[disabled],
-        input.hollow.secondary[type="button"]:focus[disabled],
-        input.hollow.secondary[type="reset"]:focus[disabled],
-        input.hollow.secondary[type="submit"]:focus[disabled] {
+        input.hollow.secondary:hover.disabled[type="button"],
+        input.hollow.secondary:hover.disabled[type="reset"],
+        input.hollow.secondary:hover.disabled[type="submit"], .button.hollow.secondary:hover[disabled], button.hollow.secondary:hover[disabled],
+        input.hollow.secondary:hover[disabled][type="button"],
+        input.hollow.secondary:hover[disabled][type="reset"],
+        input.hollow.secondary:hover[disabled][type="submit"], .button.hollow.secondary:focus.disabled, button.hollow.secondary:focus.disabled,
+        input.hollow.secondary:focus.disabled[type="button"],
+        input.hollow.secondary:focus.disabled[type="reset"],
+        input.hollow.secondary:focus.disabled[type="submit"], .button.hollow.secondary:focus[disabled], button.hollow.secondary:focus[disabled],
+        input.hollow.secondary:focus[disabled][type="button"],
+        input.hollow.secondary:focus[disabled][type="reset"],
+        input.hollow.secondary:focus[disabled][type="submit"] {
           border: 1px solid #4717f6;
           color: #4717f6; }
     .button.hollow.success, button.hollow.success,
@@ -3083,27 +3083,27 @@ input[type="submit"] {
       border: 1px solid #3adb76;
       color: #3adb76; }
       .button.hollow.success:hover, button.hollow.success:hover,
-      input.hollow.success[type="button"]:hover,
-      input.hollow.success[type="reset"]:hover,
-      input.hollow.success[type="submit"]:hover, .button.hollow.success:focus, button.hollow.success:focus,
-      input.hollow.success[type="button"]:focus,
-      input.hollow.success[type="reset"]:focus,
-      input.hollow.success[type="submit"]:focus {
+      input.hollow.success:hover[type="button"],
+      input.hollow.success:hover[type="reset"],
+      input.hollow.success:hover[type="submit"], .button.hollow.success:focus, button.hollow.success:focus,
+      input.hollow.success:focus[type="button"],
+      input.hollow.success:focus[type="reset"],
+      input.hollow.success:focus[type="submit"] {
         border-color: #157539;
         color: #157539; }
         .button.hollow.success:hover.disabled, button.hollow.success:hover.disabled,
-        input.hollow.success[type="button"]:hover.disabled,
-        input.hollow.success[type="reset"]:hover.disabled,
-        input.hollow.success[type="submit"]:hover.disabled, .button.hollow.success:hover[disabled], button.hollow.success:hover[disabled],
-        input.hollow.success[type="button"]:hover[disabled],
-        input.hollow.success[type="reset"]:hover[disabled],
-        input.hollow.success[type="submit"]:hover[disabled], .button.hollow.success:focus.disabled, button.hollow.success:focus.disabled,
-        input.hollow.success[type="button"]:focus.disabled,
-        input.hollow.success[type="reset"]:focus.disabled,
-        input.hollow.success[type="submit"]:focus.disabled, .button.hollow.success:focus[disabled], button.hollow.success:focus[disabled],
-        input.hollow.success[type="button"]:focus[disabled],
-        input.hollow.success[type="reset"]:focus[disabled],
-        input.hollow.success[type="submit"]:focus[disabled] {
+        input.hollow.success:hover.disabled[type="button"],
+        input.hollow.success:hover.disabled[type="reset"],
+        input.hollow.success:hover.disabled[type="submit"], .button.hollow.success:hover[disabled], button.hollow.success:hover[disabled],
+        input.hollow.success:hover[disabled][type="button"],
+        input.hollow.success:hover[disabled][type="reset"],
+        input.hollow.success:hover[disabled][type="submit"], .button.hollow.success:focus.disabled, button.hollow.success:focus.disabled,
+        input.hollow.success:focus.disabled[type="button"],
+        input.hollow.success:focus.disabled[type="reset"],
+        input.hollow.success:focus.disabled[type="submit"], .button.hollow.success:focus[disabled], button.hollow.success:focus[disabled],
+        input.hollow.success:focus[disabled][type="button"],
+        input.hollow.success:focus[disabled][type="reset"],
+        input.hollow.success:focus[disabled][type="submit"] {
           border: 1px solid #3adb76;
           color: #3adb76; }
     .button.hollow.warning, button.hollow.warning,
@@ -3113,27 +3113,27 @@ input[type="submit"] {
       border: 1px solid #ffae00;
       color: #ffae00; }
       .button.hollow.warning:hover, button.hollow.warning:hover,
-      input.hollow.warning[type="button"]:hover,
-      input.hollow.warning[type="reset"]:hover,
-      input.hollow.warning[type="submit"]:hover, .button.hollow.warning:focus, button.hollow.warning:focus,
-      input.hollow.warning[type="button"]:focus,
-      input.hollow.warning[type="reset"]:focus,
-      input.hollow.warning[type="submit"]:focus {
+      input.hollow.warning:hover[type="button"],
+      input.hollow.warning:hover[type="reset"],
+      input.hollow.warning:hover[type="submit"], .button.hollow.warning:focus, button.hollow.warning:focus,
+      input.hollow.warning:focus[type="button"],
+      input.hollow.warning:focus[type="reset"],
+      input.hollow.warning:focus[type="submit"] {
         border-color: #805700;
         color: #805700; }
         .button.hollow.warning:hover.disabled, button.hollow.warning:hover.disabled,
-        input.hollow.warning[type="button"]:hover.disabled,
-        input.hollow.warning[type="reset"]:hover.disabled,
-        input.hollow.warning[type="submit"]:hover.disabled, .button.hollow.warning:hover[disabled], button.hollow.warning:hover[disabled],
-        input.hollow.warning[type="button"]:hover[disabled],
-        input.hollow.warning[type="reset"]:hover[disabled],
-        input.hollow.warning[type="submit"]:hover[disabled], .button.hollow.warning:focus.disabled, button.hollow.warning:focus.disabled,
-        input.hollow.warning[type="button"]:focus.disabled,
-        input.hollow.warning[type="reset"]:focus.disabled,
-        input.hollow.warning[type="submit"]:focus.disabled, .button.hollow.warning:focus[disabled], button.hollow.warning:focus[disabled],
-        input.hollow.warning[type="button"]:focus[disabled],
-        input.hollow.warning[type="reset"]:focus[disabled],
-        input.hollow.warning[type="submit"]:focus[disabled] {
+        input.hollow.warning:hover.disabled[type="button"],
+        input.hollow.warning:hover.disabled[type="reset"],
+        input.hollow.warning:hover.disabled[type="submit"], .button.hollow.warning:hover[disabled], button.hollow.warning:hover[disabled],
+        input.hollow.warning:hover[disabled][type="button"],
+        input.hollow.warning:hover[disabled][type="reset"],
+        input.hollow.warning:hover[disabled][type="submit"], .button.hollow.warning:focus.disabled, button.hollow.warning:focus.disabled,
+        input.hollow.warning:focus.disabled[type="button"],
+        input.hollow.warning:focus.disabled[type="reset"],
+        input.hollow.warning:focus.disabled[type="submit"], .button.hollow.warning:focus[disabled], button.hollow.warning:focus[disabled],
+        input.hollow.warning:focus[disabled][type="button"],
+        input.hollow.warning:focus[disabled][type="reset"],
+        input.hollow.warning:focus[disabled][type="submit"] {
           border: 1px solid #ffae00;
           color: #ffae00; }
     .button.hollow.alert, button.hollow.alert,
@@ -3143,27 +3143,27 @@ input[type="submit"] {
       border: 1px solid #cc4b37;
       color: #cc4b37; }
       .button.hollow.alert:hover, button.hollow.alert:hover,
-      input.hollow.alert[type="button"]:hover,
-      input.hollow.alert[type="reset"]:hover,
-      input.hollow.alert[type="submit"]:hover, .button.hollow.alert:focus, button.hollow.alert:focus,
-      input.hollow.alert[type="button"]:focus,
-      input.hollow.alert[type="reset"]:focus,
-      input.hollow.alert[type="submit"]:focus {
+      input.hollow.alert:hover[type="button"],
+      input.hollow.alert:hover[type="reset"],
+      input.hollow.alert:hover[type="submit"], .button.hollow.alert:focus, button.hollow.alert:focus,
+      input.hollow.alert:focus[type="button"],
+      input.hollow.alert:focus[type="reset"],
+      input.hollow.alert:focus[type="submit"] {
         border-color: #67251a;
         color: #67251a; }
         .button.hollow.alert:hover.disabled, button.hollow.alert:hover.disabled,
-        input.hollow.alert[type="button"]:hover.disabled,
-        input.hollow.alert[type="reset"]:hover.disabled,
-        input.hollow.alert[type="submit"]:hover.disabled, .button.hollow.alert:hover[disabled], button.hollow.alert:hover[disabled],
-        input.hollow.alert[type="button"]:hover[disabled],
-        input.hollow.alert[type="reset"]:hover[disabled],
-        input.hollow.alert[type="submit"]:hover[disabled], .button.hollow.alert:focus.disabled, button.hollow.alert:focus.disabled,
-        input.hollow.alert[type="button"]:focus.disabled,
-        input.hollow.alert[type="reset"]:focus.disabled,
-        input.hollow.alert[type="submit"]:focus.disabled, .button.hollow.alert:focus[disabled], button.hollow.alert:focus[disabled],
-        input.hollow.alert[type="button"]:focus[disabled],
-        input.hollow.alert[type="reset"]:focus[disabled],
-        input.hollow.alert[type="submit"]:focus[disabled] {
+        input.hollow.alert:hover.disabled[type="button"],
+        input.hollow.alert:hover.disabled[type="reset"],
+        input.hollow.alert:hover.disabled[type="submit"], .button.hollow.alert:hover[disabled], button.hollow.alert:hover[disabled],
+        input.hollow.alert:hover[disabled][type="button"],
+        input.hollow.alert:hover[disabled][type="reset"],
+        input.hollow.alert:hover[disabled][type="submit"], .button.hollow.alert:focus.disabled, button.hollow.alert:focus.disabled,
+        input.hollow.alert:focus.disabled[type="button"],
+        input.hollow.alert:focus.disabled[type="reset"],
+        input.hollow.alert:focus.disabled[type="submit"], .button.hollow.alert:focus[disabled], button.hollow.alert:focus[disabled],
+        input.hollow.alert:focus[disabled][type="button"],
+        input.hollow.alert:focus[disabled][type="reset"],
+        input.hollow.alert:focus[disabled][type="submit"] {
           border: 1px solid #cc4b37;
           color: #cc4b37; }
   .button.clear, button.clear,
@@ -3176,55 +3176,55 @@ input[type="submit"] {
     input.clear[type="button"],
     input.clear[type="reset"],
     input.clear[type="submit"], .button.clear:hover, button.clear:hover,
-    input.clear[type="button"]:hover,
-    input.clear[type="reset"]:hover,
-    input.clear[type="submit"]:hover, .button.clear:focus, button.clear:focus,
-    input.clear[type="button"]:focus,
-    input.clear[type="reset"]:focus,
-    input.clear[type="submit"]:focus {
+    input.clear:hover[type="button"],
+    input.clear:hover[type="reset"],
+    input.clear:hover[type="submit"], .button.clear:focus, button.clear:focus,
+    input.clear:focus[type="button"],
+    input.clear:focus[type="reset"],
+    input.clear:focus[type="submit"] {
       background-color: transparent; }
     .button.clear.disabled, button.clear.disabled,
     input.clear.disabled[type="button"],
     input.clear.disabled[type="reset"],
     input.clear.disabled[type="submit"], .button.clear.disabled:hover, button.clear.disabled:hover,
-    input.clear.disabled[type="button"]:hover,
-    input.clear.disabled[type="reset"]:hover,
-    input.clear.disabled[type="submit"]:hover, .button.clear.disabled:focus, button.clear.disabled:focus,
-    input.clear.disabled[type="button"]:focus,
-    input.clear.disabled[type="reset"]:focus,
-    input.clear.disabled[type="submit"]:focus, .button.clear[disabled], button.clear[disabled],
+    input.clear.disabled:hover[type="button"],
+    input.clear.disabled:hover[type="reset"],
+    input.clear.disabled:hover[type="submit"], .button.clear.disabled:focus, button.clear.disabled:focus,
+    input.clear.disabled:focus[type="button"],
+    input.clear.disabled:focus[type="reset"],
+    input.clear.disabled:focus[type="submit"], .button.clear[disabled], button.clear[disabled],
     input.clear[disabled][type="button"],
     input.clear[disabled][type="reset"],
     input.clear[disabled][type="submit"], .button.clear[disabled]:hover, button.clear[disabled]:hover,
-    input.clear[disabled][type="button"]:hover,
-    input.clear[disabled][type="reset"]:hover,
-    input.clear[disabled][type="submit"]:hover, .button.clear[disabled]:focus, button.clear[disabled]:focus,
-    input.clear[disabled][type="button"]:focus,
-    input.clear[disabled][type="reset"]:focus,
-    input.clear[disabled][type="submit"]:focus {
+    input.clear[disabled]:hover[type="button"],
+    input.clear[disabled]:hover[type="reset"],
+    input.clear[disabled]:hover[type="submit"], .button.clear[disabled]:focus, button.clear[disabled]:focus,
+    input.clear[disabled]:focus[type="button"],
+    input.clear[disabled]:focus[type="reset"],
+    input.clear[disabled]:focus[type="submit"] {
       background-color: transparent; }
     .button.clear:hover, button.clear:hover,
-    input.clear[type="button"]:hover,
-    input.clear[type="reset"]:hover,
-    input.clear[type="submit"]:hover, .button.clear:focus, button.clear:focus,
-    input.clear[type="button"]:focus,
-    input.clear[type="reset"]:focus,
-    input.clear[type="submit"]:focus {
+    input.clear:hover[type="button"],
+    input.clear:hover[type="reset"],
+    input.clear:hover[type="submit"], .button.clear:focus, button.clear:focus,
+    input.clear:focus[type="button"],
+    input.clear:focus[type="reset"],
+    input.clear:focus[type="submit"] {
       border-color: #7c3700;
       color: #7c3700; }
       .button.clear:hover.disabled, button.clear:hover.disabled,
-      input.clear[type="button"]:hover.disabled,
-      input.clear[type="reset"]:hover.disabled,
-      input.clear[type="submit"]:hover.disabled, .button.clear:hover[disabled], button.clear:hover[disabled],
-      input.clear[type="button"]:hover[disabled],
-      input.clear[type="reset"]:hover[disabled],
-      input.clear[type="submit"]:hover[disabled], .button.clear:focus.disabled, button.clear:focus.disabled,
-      input.clear[type="button"]:focus.disabled,
-      input.clear[type="reset"]:focus.disabled,
-      input.clear[type="submit"]:focus.disabled, .button.clear:focus[disabled], button.clear:focus[disabled],
-      input.clear[type="button"]:focus[disabled],
-      input.clear[type="reset"]:focus[disabled],
-      input.clear[type="submit"]:focus[disabled] {
+      input.clear:hover.disabled[type="button"],
+      input.clear:hover.disabled[type="reset"],
+      input.clear:hover.disabled[type="submit"], .button.clear:hover[disabled], button.clear:hover[disabled],
+      input.clear:hover[disabled][type="button"],
+      input.clear:hover[disabled][type="reset"],
+      input.clear:hover[disabled][type="submit"], .button.clear:focus.disabled, button.clear:focus.disabled,
+      input.clear:focus.disabled[type="button"],
+      input.clear:focus.disabled[type="reset"],
+      input.clear:focus.disabled[type="submit"], .button.clear:focus[disabled], button.clear:focus[disabled],
+      input.clear:focus[disabled][type="button"],
+      input.clear:focus[disabled][type="reset"],
+      input.clear:focus[disabled][type="submit"] {
         border: 1px solid #f76e00;
         color: #f76e00; }
     .button.clear, button.clear,
@@ -3237,24 +3237,24 @@ input[type="submit"] {
     input.clear[disabled][type="button"],
     input.clear[disabled][type="reset"],
     input.clear[disabled][type="submit"], .button.clear:hover, button.clear:hover,
-    input.clear[type="button"]:hover,
-    input.clear[type="reset"]:hover,
-    input.clear[type="submit"]:hover, .button.clear:hover.disabled, button.clear:hover.disabled,
-    input.clear[type="button"]:hover.disabled,
-    input.clear[type="reset"]:hover.disabled,
-    input.clear[type="submit"]:hover.disabled, .button.clear:hover[disabled], button.clear:hover[disabled],
-    input.clear[type="button"]:hover[disabled],
-    input.clear[type="reset"]:hover[disabled],
-    input.clear[type="submit"]:hover[disabled], .button.clear:focus, button.clear:focus,
-    input.clear[type="button"]:focus,
-    input.clear[type="reset"]:focus,
-    input.clear[type="submit"]:focus, .button.clear:focus.disabled, button.clear:focus.disabled,
-    input.clear[type="button"]:focus.disabled,
-    input.clear[type="reset"]:focus.disabled,
-    input.clear[type="submit"]:focus.disabled, .button.clear:focus[disabled], button.clear:focus[disabled],
-    input.clear[type="button"]:focus[disabled],
-    input.clear[type="reset"]:focus[disabled],
-    input.clear[type="submit"]:focus[disabled] {
+    input.clear:hover[type="button"],
+    input.clear:hover[type="reset"],
+    input.clear:hover[type="submit"], .button.clear:hover.disabled, button.clear:hover.disabled,
+    input.clear:hover.disabled[type="button"],
+    input.clear:hover.disabled[type="reset"],
+    input.clear:hover.disabled[type="submit"], .button.clear:hover[disabled], button.clear:hover[disabled],
+    input.clear:hover[disabled][type="button"],
+    input.clear:hover[disabled][type="reset"],
+    input.clear:hover[disabled][type="submit"], .button.clear:focus, button.clear:focus,
+    input.clear:focus[type="button"],
+    input.clear:focus[type="reset"],
+    input.clear:focus[type="submit"], .button.clear:focus.disabled, button.clear:focus.disabled,
+    input.clear:focus.disabled[type="button"],
+    input.clear:focus.disabled[type="reset"],
+    input.clear:focus.disabled[type="submit"], .button.clear:focus[disabled], button.clear:focus[disabled],
+    input.clear:focus[disabled][type="button"],
+    input.clear:focus[disabled][type="reset"],
+    input.clear:focus[disabled][type="submit"] {
       border-color: transparent; }
     .button.clear.primary, button.clear.primary,
     input.clear.primary[type="button"],
@@ -3263,27 +3263,27 @@ input[type="submit"] {
       border: 1px solid #f76e00;
       color: #f76e00; }
       .button.clear.primary:hover, button.clear.primary:hover,
-      input.clear.primary[type="button"]:hover,
-      input.clear.primary[type="reset"]:hover,
-      input.clear.primary[type="submit"]:hover, .button.clear.primary:focus, button.clear.primary:focus,
-      input.clear.primary[type="button"]:focus,
-      input.clear.primary[type="reset"]:focus,
-      input.clear.primary[type="submit"]:focus {
+      input.clear.primary:hover[type="button"],
+      input.clear.primary:hover[type="reset"],
+      input.clear.primary:hover[type="submit"], .button.clear.primary:focus, button.clear.primary:focus,
+      input.clear.primary:focus[type="button"],
+      input.clear.primary:focus[type="reset"],
+      input.clear.primary:focus[type="submit"] {
         border-color: #7c3700;
         color: #7c3700; }
         .button.clear.primary:hover.disabled, button.clear.primary:hover.disabled,
-        input.clear.primary[type="button"]:hover.disabled,
-        input.clear.primary[type="reset"]:hover.disabled,
-        input.clear.primary[type="submit"]:hover.disabled, .button.clear.primary:hover[disabled], button.clear.primary:hover[disabled],
-        input.clear.primary[type="button"]:hover[disabled],
-        input.clear.primary[type="reset"]:hover[disabled],
-        input.clear.primary[type="submit"]:hover[disabled], .button.clear.primary:focus.disabled, button.clear.primary:focus.disabled,
-        input.clear.primary[type="button"]:focus.disabled,
-        input.clear.primary[type="reset"]:focus.disabled,
-        input.clear.primary[type="submit"]:focus.disabled, .button.clear.primary:focus[disabled], button.clear.primary:focus[disabled],
-        input.clear.primary[type="button"]:focus[disabled],
-        input.clear.primary[type="reset"]:focus[disabled],
-        input.clear.primary[type="submit"]:focus[disabled] {
+        input.clear.primary:hover.disabled[type="button"],
+        input.clear.primary:hover.disabled[type="reset"],
+        input.clear.primary:hover.disabled[type="submit"], .button.clear.primary:hover[disabled], button.clear.primary:hover[disabled],
+        input.clear.primary:hover[disabled][type="button"],
+        input.clear.primary:hover[disabled][type="reset"],
+        input.clear.primary:hover[disabled][type="submit"], .button.clear.primary:focus.disabled, button.clear.primary:focus.disabled,
+        input.clear.primary:focus.disabled[type="button"],
+        input.clear.primary:focus.disabled[type="reset"],
+        input.clear.primary:focus.disabled[type="submit"], .button.clear.primary:focus[disabled], button.clear.primary:focus[disabled],
+        input.clear.primary:focus[disabled][type="button"],
+        input.clear.primary:focus[disabled][type="reset"],
+        input.clear.primary:focus[disabled][type="submit"] {
           border: 1px solid #f76e00;
           color: #f76e00; }
       .button.clear.primary, button.clear.primary,
@@ -3296,24 +3296,24 @@ input[type="submit"] {
       input.clear.primary[disabled][type="button"],
       input.clear.primary[disabled][type="reset"],
       input.clear.primary[disabled][type="submit"], .button.clear.primary:hover, button.clear.primary:hover,
-      input.clear.primary[type="button"]:hover,
-      input.clear.primary[type="reset"]:hover,
-      input.clear.primary[type="submit"]:hover, .button.clear.primary:hover.disabled, button.clear.primary:hover.disabled,
-      input.clear.primary[type="button"]:hover.disabled,
-      input.clear.primary[type="reset"]:hover.disabled,
-      input.clear.primary[type="submit"]:hover.disabled, .button.clear.primary:hover[disabled], button.clear.primary:hover[disabled],
-      input.clear.primary[type="button"]:hover[disabled],
-      input.clear.primary[type="reset"]:hover[disabled],
-      input.clear.primary[type="submit"]:hover[disabled], .button.clear.primary:focus, button.clear.primary:focus,
-      input.clear.primary[type="button"]:focus,
-      input.clear.primary[type="reset"]:focus,
-      input.clear.primary[type="submit"]:focus, .button.clear.primary:focus.disabled, button.clear.primary:focus.disabled,
-      input.clear.primary[type="button"]:focus.disabled,
-      input.clear.primary[type="reset"]:focus.disabled,
-      input.clear.primary[type="submit"]:focus.disabled, .button.clear.primary:focus[disabled], button.clear.primary:focus[disabled],
-      input.clear.primary[type="button"]:focus[disabled],
-      input.clear.primary[type="reset"]:focus[disabled],
-      input.clear.primary[type="submit"]:focus[disabled] {
+      input.clear.primary:hover[type="button"],
+      input.clear.primary:hover[type="reset"],
+      input.clear.primary:hover[type="submit"], .button.clear.primary:hover.disabled, button.clear.primary:hover.disabled,
+      input.clear.primary:hover.disabled[type="button"],
+      input.clear.primary:hover.disabled[type="reset"],
+      input.clear.primary:hover.disabled[type="submit"], .button.clear.primary:hover[disabled], button.clear.primary:hover[disabled],
+      input.clear.primary:hover[disabled][type="button"],
+      input.clear.primary:hover[disabled][type="reset"],
+      input.clear.primary:hover[disabled][type="submit"], .button.clear.primary:focus, button.clear.primary:focus,
+      input.clear.primary:focus[type="button"],
+      input.clear.primary:focus[type="reset"],
+      input.clear.primary:focus[type="submit"], .button.clear.primary:focus.disabled, button.clear.primary:focus.disabled,
+      input.clear.primary:focus.disabled[type="button"],
+      input.clear.primary:focus.disabled[type="reset"],
+      input.clear.primary:focus.disabled[type="submit"], .button.clear.primary:focus[disabled], button.clear.primary:focus[disabled],
+      input.clear.primary:focus[disabled][type="button"],
+      input.clear.primary:focus[disabled][type="reset"],
+      input.clear.primary:focus[disabled][type="submit"] {
         border-color: transparent; }
     .button.clear.secondary, button.clear.secondary,
     input.clear.secondary[type="button"],
@@ -3322,27 +3322,27 @@ input[type="submit"] {
       border: 1px solid #4717f6;
       color: #4717f6; }
       .button.clear.secondary:hover, button.clear.secondary:hover,
-      input.clear.secondary[type="button"]:hover,
-      input.clear.secondary[type="reset"]:hover,
-      input.clear.secondary[type="submit"]:hover, .button.clear.secondary:focus, button.clear.secondary:focus,
-      input.clear.secondary[type="button"]:focus,
-      input.clear.secondary[type="reset"]:focus,
-      input.clear.secondary[type="submit"]:focus {
+      input.clear.secondary:hover[type="button"],
+      input.clear.secondary:hover[type="reset"],
+      input.clear.secondary:hover[type="submit"], .button.clear.secondary:focus, button.clear.secondary:focus,
+      input.clear.secondary:focus[type="button"],
+      input.clear.secondary:focus[type="reset"],
+      input.clear.secondary:focus[type="submit"] {
         border-color: #200581;
         color: #200581; }
         .button.clear.secondary:hover.disabled, button.clear.secondary:hover.disabled,
-        input.clear.secondary[type="button"]:hover.disabled,
-        input.clear.secondary[type="reset"]:hover.disabled,
-        input.clear.secondary[type="submit"]:hover.disabled, .button.clear.secondary:hover[disabled], button.clear.secondary:hover[disabled],
-        input.clear.secondary[type="button"]:hover[disabled],
-        input.clear.secondary[type="reset"]:hover[disabled],
-        input.clear.secondary[type="submit"]:hover[disabled], .button.clear.secondary:focus.disabled, button.clear.secondary:focus.disabled,
-        input.clear.secondary[type="button"]:focus.disabled,
-        input.clear.secondary[type="reset"]:focus.disabled,
-        input.clear.secondary[type="submit"]:focus.disabled, .button.clear.secondary:focus[disabled], button.clear.secondary:focus[disabled],
-        input.clear.secondary[type="button"]:focus[disabled],
-        input.clear.secondary[type="reset"]:focus[disabled],
-        input.clear.secondary[type="submit"]:focus[disabled] {
+        input.clear.secondary:hover.disabled[type="button"],
+        input.clear.secondary:hover.disabled[type="reset"],
+        input.clear.secondary:hover.disabled[type="submit"], .button.clear.secondary:hover[disabled], button.clear.secondary:hover[disabled],
+        input.clear.secondary:hover[disabled][type="button"],
+        input.clear.secondary:hover[disabled][type="reset"],
+        input.clear.secondary:hover[disabled][type="submit"], .button.clear.secondary:focus.disabled, button.clear.secondary:focus.disabled,
+        input.clear.secondary:focus.disabled[type="button"],
+        input.clear.secondary:focus.disabled[type="reset"],
+        input.clear.secondary:focus.disabled[type="submit"], .button.clear.secondary:focus[disabled], button.clear.secondary:focus[disabled],
+        input.clear.secondary:focus[disabled][type="button"],
+        input.clear.secondary:focus[disabled][type="reset"],
+        input.clear.secondary:focus[disabled][type="submit"] {
           border: 1px solid #4717f6;
           color: #4717f6; }
       .button.clear.secondary, button.clear.secondary,
@@ -3355,24 +3355,24 @@ input[type="submit"] {
       input.clear.secondary[disabled][type="button"],
       input.clear.secondary[disabled][type="reset"],
       input.clear.secondary[disabled][type="submit"], .button.clear.secondary:hover, button.clear.secondary:hover,
-      input.clear.secondary[type="button"]:hover,
-      input.clear.secondary[type="reset"]:hover,
-      input.clear.secondary[type="submit"]:hover, .button.clear.secondary:hover.disabled, button.clear.secondary:hover.disabled,
-      input.clear.secondary[type="button"]:hover.disabled,
-      input.clear.secondary[type="reset"]:hover.disabled,
-      input.clear.secondary[type="submit"]:hover.disabled, .button.clear.secondary:hover[disabled], button.clear.secondary:hover[disabled],
-      input.clear.secondary[type="button"]:hover[disabled],
-      input.clear.secondary[type="reset"]:hover[disabled],
-      input.clear.secondary[type="submit"]:hover[disabled], .button.clear.secondary:focus, button.clear.secondary:focus,
-      input.clear.secondary[type="button"]:focus,
-      input.clear.secondary[type="reset"]:focus,
-      input.clear.secondary[type="submit"]:focus, .button.clear.secondary:focus.disabled, button.clear.secondary:focus.disabled,
-      input.clear.secondary[type="button"]:focus.disabled,
-      input.clear.secondary[type="reset"]:focus.disabled,
-      input.clear.secondary[type="submit"]:focus.disabled, .button.clear.secondary:focus[disabled], button.clear.secondary:focus[disabled],
-      input.clear.secondary[type="button"]:focus[disabled],
-      input.clear.secondary[type="reset"]:focus[disabled],
-      input.clear.secondary[type="submit"]:focus[disabled] {
+      input.clear.secondary:hover[type="button"],
+      input.clear.secondary:hover[type="reset"],
+      input.clear.secondary:hover[type="submit"], .button.clear.secondary:hover.disabled, button.clear.secondary:hover.disabled,
+      input.clear.secondary:hover.disabled[type="button"],
+      input.clear.secondary:hover.disabled[type="reset"],
+      input.clear.secondary:hover.disabled[type="submit"], .button.clear.secondary:hover[disabled], button.clear.secondary:hover[disabled],
+      input.clear.secondary:hover[disabled][type="button"],
+      input.clear.secondary:hover[disabled][type="reset"],
+      input.clear.secondary:hover[disabled][type="submit"], .button.clear.secondary:focus, button.clear.secondary:focus,
+      input.clear.secondary:focus[type="button"],
+      input.clear.secondary:focus[type="reset"],
+      input.clear.secondary:focus[type="submit"], .button.clear.secondary:focus.disabled, button.clear.secondary:focus.disabled,
+      input.clear.secondary:focus.disabled[type="button"],
+      input.clear.secondary:focus.disabled[type="reset"],
+      input.clear.secondary:focus.disabled[type="submit"], .button.clear.secondary:focus[disabled], button.clear.secondary:focus[disabled],
+      input.clear.secondary:focus[disabled][type="button"],
+      input.clear.secondary:focus[disabled][type="reset"],
+      input.clear.secondary:focus[disabled][type="submit"] {
         border-color: transparent; }
     .button.clear.success, button.clear.success,
     input.clear.success[type="button"],
@@ -3381,27 +3381,27 @@ input[type="submit"] {
       border: 1px solid #3adb76;
       color: #3adb76; }
       .button.clear.success:hover, button.clear.success:hover,
-      input.clear.success[type="button"]:hover,
-      input.clear.success[type="reset"]:hover,
-      input.clear.success[type="submit"]:hover, .button.clear.success:focus, button.clear.success:focus,
-      input.clear.success[type="button"]:focus,
-      input.clear.success[type="reset"]:focus,
-      input.clear.success[type="submit"]:focus {
+      input.clear.success:hover[type="button"],
+      input.clear.success:hover[type="reset"],
+      input.clear.success:hover[type="submit"], .button.clear.success:focus, button.clear.success:focus,
+      input.clear.success:focus[type="button"],
+      input.clear.success:focus[type="reset"],
+      input.clear.success:focus[type="submit"] {
         border-color: #157539;
         color: #157539; }
         .button.clear.success:hover.disabled, button.clear.success:hover.disabled,
-        input.clear.success[type="button"]:hover.disabled,
-        input.clear.success[type="reset"]:hover.disabled,
-        input.clear.success[type="submit"]:hover.disabled, .button.clear.success:hover[disabled], button.clear.success:hover[disabled],
-        input.clear.success[type="button"]:hover[disabled],
-        input.clear.success[type="reset"]:hover[disabled],
-        input.clear.success[type="submit"]:hover[disabled], .button.clear.success:focus.disabled, button.clear.success:focus.disabled,
-        input.clear.success[type="button"]:focus.disabled,
-        input.clear.success[type="reset"]:focus.disabled,
-        input.clear.success[type="submit"]:focus.disabled, .button.clear.success:focus[disabled], button.clear.success:focus[disabled],
-        input.clear.success[type="button"]:focus[disabled],
-        input.clear.success[type="reset"]:focus[disabled],
-        input.clear.success[type="submit"]:focus[disabled] {
+        input.clear.success:hover.disabled[type="button"],
+        input.clear.success:hover.disabled[type="reset"],
+        input.clear.success:hover.disabled[type="submit"], .button.clear.success:hover[disabled], button.clear.success:hover[disabled],
+        input.clear.success:hover[disabled][type="button"],
+        input.clear.success:hover[disabled][type="reset"],
+        input.clear.success:hover[disabled][type="submit"], .button.clear.success:focus.disabled, button.clear.success:focus.disabled,
+        input.clear.success:focus.disabled[type="button"],
+        input.clear.success:focus.disabled[type="reset"],
+        input.clear.success:focus.disabled[type="submit"], .button.clear.success:focus[disabled], button.clear.success:focus[disabled],
+        input.clear.success:focus[disabled][type="button"],
+        input.clear.success:focus[disabled][type="reset"],
+        input.clear.success:focus[disabled][type="submit"] {
           border: 1px solid #3adb76;
           color: #3adb76; }
       .button.clear.success, button.clear.success,
@@ -3414,24 +3414,24 @@ input[type="submit"] {
       input.clear.success[disabled][type="button"],
       input.clear.success[disabled][type="reset"],
       input.clear.success[disabled][type="submit"], .button.clear.success:hover, button.clear.success:hover,
-      input.clear.success[type="button"]:hover,
-      input.clear.success[type="reset"]:hover,
-      input.clear.success[type="submit"]:hover, .button.clear.success:hover.disabled, button.clear.success:hover.disabled,
-      input.clear.success[type="button"]:hover.disabled,
-      input.clear.success[type="reset"]:hover.disabled,
-      input.clear.success[type="submit"]:hover.disabled, .button.clear.success:hover[disabled], button.clear.success:hover[disabled],
-      input.clear.success[type="button"]:hover[disabled],
-      input.clear.success[type="reset"]:hover[disabled],
-      input.clear.success[type="submit"]:hover[disabled], .button.clear.success:focus, button.clear.success:focus,
-      input.clear.success[type="button"]:focus,
-      input.clear.success[type="reset"]:focus,
-      input.clear.success[type="submit"]:focus, .button.clear.success:focus.disabled, button.clear.success:focus.disabled,
-      input.clear.success[type="button"]:focus.disabled,
-      input.clear.success[type="reset"]:focus.disabled,
-      input.clear.success[type="submit"]:focus.disabled, .button.clear.success:focus[disabled], button.clear.success:focus[disabled],
-      input.clear.success[type="button"]:focus[disabled],
-      input.clear.success[type="reset"]:focus[disabled],
-      input.clear.success[type="submit"]:focus[disabled] {
+      input.clear.success:hover[type="button"],
+      input.clear.success:hover[type="reset"],
+      input.clear.success:hover[type="submit"], .button.clear.success:hover.disabled, button.clear.success:hover.disabled,
+      input.clear.success:hover.disabled[type="button"],
+      input.clear.success:hover.disabled[type="reset"],
+      input.clear.success:hover.disabled[type="submit"], .button.clear.success:hover[disabled], button.clear.success:hover[disabled],
+      input.clear.success:hover[disabled][type="button"],
+      input.clear.success:hover[disabled][type="reset"],
+      input.clear.success:hover[disabled][type="submit"], .button.clear.success:focus, button.clear.success:focus,
+      input.clear.success:focus[type="button"],
+      input.clear.success:focus[type="reset"],
+      input.clear.success:focus[type="submit"], .button.clear.success:focus.disabled, button.clear.success:focus.disabled,
+      input.clear.success:focus.disabled[type="button"],
+      input.clear.success:focus.disabled[type="reset"],
+      input.clear.success:focus.disabled[type="submit"], .button.clear.success:focus[disabled], button.clear.success:focus[disabled],
+      input.clear.success:focus[disabled][type="button"],
+      input.clear.success:focus[disabled][type="reset"],
+      input.clear.success:focus[disabled][type="submit"] {
         border-color: transparent; }
     .button.clear.warning, button.clear.warning,
     input.clear.warning[type="button"],
@@ -3440,27 +3440,27 @@ input[type="submit"] {
       border: 1px solid #ffae00;
       color: #ffae00; }
       .button.clear.warning:hover, button.clear.warning:hover,
-      input.clear.warning[type="button"]:hover,
-      input.clear.warning[type="reset"]:hover,
-      input.clear.warning[type="submit"]:hover, .button.clear.warning:focus, button.clear.warning:focus,
-      input.clear.warning[type="button"]:focus,
-      input.clear.warning[type="reset"]:focus,
-      input.clear.warning[type="submit"]:focus {
+      input.clear.warning:hover[type="button"],
+      input.clear.warning:hover[type="reset"],
+      input.clear.warning:hover[type="submit"], .button.clear.warning:focus, button.clear.warning:focus,
+      input.clear.warning:focus[type="button"],
+      input.clear.warning:focus[type="reset"],
+      input.clear.warning:focus[type="submit"] {
         border-color: #805700;
         color: #805700; }
         .button.clear.warning:hover.disabled, button.clear.warning:hover.disabled,
-        input.clear.warning[type="button"]:hover.disabled,
-        input.clear.warning[type="reset"]:hover.disabled,
-        input.clear.warning[type="submit"]:hover.disabled, .button.clear.warning:hover[disabled], button.clear.warning:hover[disabled],
-        input.clear.warning[type="button"]:hover[disabled],
-        input.clear.warning[type="reset"]:hover[disabled],
-        input.clear.warning[type="submit"]:hover[disabled], .button.clear.warning:focus.disabled, button.clear.warning:focus.disabled,
-        input.clear.warning[type="button"]:focus.disabled,
-        input.clear.warning[type="reset"]:focus.disabled,
-        input.clear.warning[type="submit"]:focus.disabled, .button.clear.warning:focus[disabled], button.clear.warning:focus[disabled],
-        input.clear.warning[type="button"]:focus[disabled],
-        input.clear.warning[type="reset"]:focus[disabled],
-        input.clear.warning[type="submit"]:focus[disabled] {
+        input.clear.warning:hover.disabled[type="button"],
+        input.clear.warning:hover.disabled[type="reset"],
+        input.clear.warning:hover.disabled[type="submit"], .button.clear.warning:hover[disabled], button.clear.warning:hover[disabled],
+        input.clear.warning:hover[disabled][type="button"],
+        input.clear.warning:hover[disabled][type="reset"],
+        input.clear.warning:hover[disabled][type="submit"], .button.clear.warning:focus.disabled, button.clear.warning:focus.disabled,
+        input.clear.warning:focus.disabled[type="button"],
+        input.clear.warning:focus.disabled[type="reset"],
+        input.clear.warning:focus.disabled[type="submit"], .button.clear.warning:focus[disabled], button.clear.warning:focus[disabled],
+        input.clear.warning:focus[disabled][type="button"],
+        input.clear.warning:focus[disabled][type="reset"],
+        input.clear.warning:focus[disabled][type="submit"] {
           border: 1px solid #ffae00;
           color: #ffae00; }
       .button.clear.warning, button.clear.warning,
@@ -3473,24 +3473,24 @@ input[type="submit"] {
       input.clear.warning[disabled][type="button"],
       input.clear.warning[disabled][type="reset"],
       input.clear.warning[disabled][type="submit"], .button.clear.warning:hover, button.clear.warning:hover,
-      input.clear.warning[type="button"]:hover,
-      input.clear.warning[type="reset"]:hover,
-      input.clear.warning[type="submit"]:hover, .button.clear.warning:hover.disabled, button.clear.warning:hover.disabled,
-      input.clear.warning[type="button"]:hover.disabled,
-      input.clear.warning[type="reset"]:hover.disabled,
-      input.clear.warning[type="submit"]:hover.disabled, .button.clear.warning:hover[disabled], button.clear.warning:hover[disabled],
-      input.clear.warning[type="button"]:hover[disabled],
-      input.clear.warning[type="reset"]:hover[disabled],
-      input.clear.warning[type="submit"]:hover[disabled], .button.clear.warning:focus, button.clear.warning:focus,
-      input.clear.warning[type="button"]:focus,
-      input.clear.warning[type="reset"]:focus,
-      input.clear.warning[type="submit"]:focus, .button.clear.warning:focus.disabled, button.clear.warning:focus.disabled,
-      input.clear.warning[type="button"]:focus.disabled,
-      input.clear.warning[type="reset"]:focus.disabled,
-      input.clear.warning[type="submit"]:focus.disabled, .button.clear.warning:focus[disabled], button.clear.warning:focus[disabled],
-      input.clear.warning[type="button"]:focus[disabled],
-      input.clear.warning[type="reset"]:focus[disabled],
-      input.clear.warning[type="submit"]:focus[disabled] {
+      input.clear.warning:hover[type="button"],
+      input.clear.warning:hover[type="reset"],
+      input.clear.warning:hover[type="submit"], .button.clear.warning:hover.disabled, button.clear.warning:hover.disabled,
+      input.clear.warning:hover.disabled[type="button"],
+      input.clear.warning:hover.disabled[type="reset"],
+      input.clear.warning:hover.disabled[type="submit"], .button.clear.warning:hover[disabled], button.clear.warning:hover[disabled],
+      input.clear.warning:hover[disabled][type="button"],
+      input.clear.warning:hover[disabled][type="reset"],
+      input.clear.warning:hover[disabled][type="submit"], .button.clear.warning:focus, button.clear.warning:focus,
+      input.clear.warning:focus[type="button"],
+      input.clear.warning:focus[type="reset"],
+      input.clear.warning:focus[type="submit"], .button.clear.warning:focus.disabled, button.clear.warning:focus.disabled,
+      input.clear.warning:focus.disabled[type="button"],
+      input.clear.warning:focus.disabled[type="reset"],
+      input.clear.warning:focus.disabled[type="submit"], .button.clear.warning:focus[disabled], button.clear.warning:focus[disabled],
+      input.clear.warning:focus[disabled][type="button"],
+      input.clear.warning:focus[disabled][type="reset"],
+      input.clear.warning:focus[disabled][type="submit"] {
         border-color: transparent; }
     .button.clear.alert, button.clear.alert,
     input.clear.alert[type="button"],
@@ -3499,27 +3499,27 @@ input[type="submit"] {
       border: 1px solid #cc4b37;
       color: #cc4b37; }
       .button.clear.alert:hover, button.clear.alert:hover,
-      input.clear.alert[type="button"]:hover,
-      input.clear.alert[type="reset"]:hover,
-      input.clear.alert[type="submit"]:hover, .button.clear.alert:focus, button.clear.alert:focus,
-      input.clear.alert[type="button"]:focus,
-      input.clear.alert[type="reset"]:focus,
-      input.clear.alert[type="submit"]:focus {
+      input.clear.alert:hover[type="button"],
+      input.clear.alert:hover[type="reset"],
+      input.clear.alert:hover[type="submit"], .button.clear.alert:focus, button.clear.alert:focus,
+      input.clear.alert:focus[type="button"],
+      input.clear.alert:focus[type="reset"],
+      input.clear.alert:focus[type="submit"] {
         border-color: #67251a;
         color: #67251a; }
         .button.clear.alert:hover.disabled, button.clear.alert:hover.disabled,
-        input.clear.alert[type="button"]:hover.disabled,
-        input.clear.alert[type="reset"]:hover.disabled,
-        input.clear.alert[type="submit"]:hover.disabled, .button.clear.alert:hover[disabled], button.clear.alert:hover[disabled],
-        input.clear.alert[type="button"]:hover[disabled],
-        input.clear.alert[type="reset"]:hover[disabled],
-        input.clear.alert[type="submit"]:hover[disabled], .button.clear.alert:focus.disabled, button.clear.alert:focus.disabled,
-        input.clear.alert[type="button"]:focus.disabled,
-        input.clear.alert[type="reset"]:focus.disabled,
-        input.clear.alert[type="submit"]:focus.disabled, .button.clear.alert:focus[disabled], button.clear.alert:focus[disabled],
-        input.clear.alert[type="button"]:focus[disabled],
-        input.clear.alert[type="reset"]:focus[disabled],
-        input.clear.alert[type="submit"]:focus[disabled] {
+        input.clear.alert:hover.disabled[type="button"],
+        input.clear.alert:hover.disabled[type="reset"],
+        input.clear.alert:hover.disabled[type="submit"], .button.clear.alert:hover[disabled], button.clear.alert:hover[disabled],
+        input.clear.alert:hover[disabled][type="button"],
+        input.clear.alert:hover[disabled][type="reset"],
+        input.clear.alert:hover[disabled][type="submit"], .button.clear.alert:focus.disabled, button.clear.alert:focus.disabled,
+        input.clear.alert:focus.disabled[type="button"],
+        input.clear.alert:focus.disabled[type="reset"],
+        input.clear.alert:focus.disabled[type="submit"], .button.clear.alert:focus[disabled], button.clear.alert:focus[disabled],
+        input.clear.alert:focus[disabled][type="button"],
+        input.clear.alert:focus[disabled][type="reset"],
+        input.clear.alert:focus[disabled][type="submit"] {
           border: 1px solid #cc4b37;
           color: #cc4b37; }
       .button.clear.alert, button.clear.alert,
@@ -3532,24 +3532,24 @@ input[type="submit"] {
       input.clear.alert[disabled][type="button"],
       input.clear.alert[disabled][type="reset"],
       input.clear.alert[disabled][type="submit"], .button.clear.alert:hover, button.clear.alert:hover,
-      input.clear.alert[type="button"]:hover,
-      input.clear.alert[type="reset"]:hover,
-      input.clear.alert[type="submit"]:hover, .button.clear.alert:hover.disabled, button.clear.alert:hover.disabled,
-      input.clear.alert[type="button"]:hover.disabled,
-      input.clear.alert[type="reset"]:hover.disabled,
-      input.clear.alert[type="submit"]:hover.disabled, .button.clear.alert:hover[disabled], button.clear.alert:hover[disabled],
-      input.clear.alert[type="button"]:hover[disabled],
-      input.clear.alert[type="reset"]:hover[disabled],
-      input.clear.alert[type="submit"]:hover[disabled], .button.clear.alert:focus, button.clear.alert:focus,
-      input.clear.alert[type="button"]:focus,
-      input.clear.alert[type="reset"]:focus,
-      input.clear.alert[type="submit"]:focus, .button.clear.alert:focus.disabled, button.clear.alert:focus.disabled,
-      input.clear.alert[type="button"]:focus.disabled,
-      input.clear.alert[type="reset"]:focus.disabled,
-      input.clear.alert[type="submit"]:focus.disabled, .button.clear.alert:focus[disabled], button.clear.alert:focus[disabled],
-      input.clear.alert[type="button"]:focus[disabled],
-      input.clear.alert[type="reset"]:focus[disabled],
-      input.clear.alert[type="submit"]:focus[disabled] {
+      input.clear.alert:hover[type="button"],
+      input.clear.alert:hover[type="reset"],
+      input.clear.alert:hover[type="submit"], .button.clear.alert:hover.disabled, button.clear.alert:hover.disabled,
+      input.clear.alert:hover.disabled[type="button"],
+      input.clear.alert:hover.disabled[type="reset"],
+      input.clear.alert:hover.disabled[type="submit"], .button.clear.alert:hover[disabled], button.clear.alert:hover[disabled],
+      input.clear.alert:hover[disabled][type="button"],
+      input.clear.alert:hover[disabled][type="reset"],
+      input.clear.alert:hover[disabled][type="submit"], .button.clear.alert:focus, button.clear.alert:focus,
+      input.clear.alert:focus[type="button"],
+      input.clear.alert:focus[type="reset"],
+      input.clear.alert:focus[type="submit"], .button.clear.alert:focus.disabled, button.clear.alert:focus.disabled,
+      input.clear.alert:focus.disabled[type="button"],
+      input.clear.alert:focus.disabled[type="reset"],
+      input.clear.alert:focus.disabled[type="submit"], .button.clear.alert:focus[disabled], button.clear.alert:focus[disabled],
+      input.clear.alert:focus[disabled][type="button"],
+      input.clear.alert:focus[disabled][type="reset"],
+      input.clear.alert:focus[disabled][type="submit"] {
         border-color: transparent; }
   .button.dropdown::after, button.dropdown::after,
   input.dropdown[type="button"]::after,
@@ -3833,12 +3833,9 @@ a.button:hover, a.button:focus {
   .menu a,
   .menu .button,
   .menu button,
-  .menu
-  input[type="button"],
-  .menu
-  input[type="reset"],
-  .menu
-  input[type="submit"] {
+  .menu input[type="button"],
+  .menu input[type="reset"],
+  .menu input[type="submit"] {
     line-height: 1;
     text-decoration: none;
     display: block;
@@ -4700,7 +4697,9 @@ table {
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 0; }
-  thead, tbody, tfoot {
+  thead,
+  tbody,
+  tfoot {
     border: 1px solid #f1f1f1;
     background-color: #fefefe; }
   caption {
@@ -4712,13 +4711,18 @@ table {
   tfoot {
     background: #f1f1f1;
     color: #0a0a0a; }
-  thead tr, tfoot tr {
+  thead tr,
+  tfoot tr {
     background: transparent; }
-  thead th, thead td, tfoot th, tfoot td {
+  thead th,
+  thead td,
+  tfoot th,
+  tfoot td {
     padding: 0.5rem 0.625rem 0.625rem;
     font-weight: bold;
     text-align: left; }
-  tbody th, tbody td {
+  tbody th,
+  tbody td {
     padding: 0.5rem 0.625rem 0.625rem; }
   tbody tr:nth-child(even) {
     border-bottom: 0;
@@ -4948,10 +4952,10 @@ a.thumbnail {
   .top-bar .input-group-field {
     width: 100%;
     margin-right: 0; }
-  .top-bar input.button, .top-bar
-  input[type="button"], .top-bar
-  input[type="reset"], .top-bar
-  input[type="submit"] {
+  .top-bar input.button,
+  .top-bar input[type="button"],
+  .top-bar input[type="reset"],
+  .top-bar input[type="submit"] {
     width: auto; }
   .top-bar .top-bar-left,
   .top-bar .top-bar-right {
@@ -5706,6 +5710,8 @@ a {
   width: 100%;
   /* Sticky Menu */
   /* Responsive menu */ }
+  .main-navigation a {
+    font-weight: 500; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -5713,10 +5719,9 @@ a {
     .main-navigation ul .menu-item a {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      position: relative;
-      transition: ease padding 0.3s; }
+      position: relative; }
       .main-navigation ul .menu-item a:before {
-        content: '';
+        content: "";
         background-color: #f76e00;
         height: 3px;
         transition: transform ease-out 0.5s;
@@ -5778,7 +5783,7 @@ a {
         font-size: 13px;
         transition: ease background 0.3s; }
         .main-navigation .menu-toggle .menu-toggle-icon, .main-navigation .menu-toggle .menu-toggle-icon:after, .main-navigation .menu-toggle .menu-toggle-icon:before {
-          content: '';
+          content: "";
           position: absolute;
           display: block;
           width: 35px;
@@ -5847,7 +5852,7 @@ a {
             left: 0;
             border: none; }
             .main-navigation #primary-menu .menu-item.menu-item-has-children ul li:before {
-              content: '';
+              content: "";
               display: inline-block;
               border-left: solid 5px #f76e00;
               position: absolute;
@@ -6061,6 +6066,9 @@ a {
     margin-bottom: 0.5em;
     padding: 0.4em; }
 
+.widget .social-icons-lists {
+  margin: 0; }
+
 .widget_recent_comments li {
   position: relative;
   padding: 0.5rem 0.5em 0.5em 2.0em; }
@@ -6121,7 +6129,7 @@ a {
     background-image: -webkit-linear-gradient(left, #4717f6, #333333);
     background-image: linear-gradient(to right, #4717f6, #333333); }
     .site-header .header-background:before {
-      content: '';
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
@@ -6147,7 +6155,7 @@ a {
     text-align: center;
     position: relative; }
   .page-title-bar .entry-meta {
-    color: #0a0a0a; }
+    color: #fefefe; }
 
 .single-post .header-background {
   background: none;
@@ -6316,8 +6324,7 @@ a {
       .comments-area .comment-list .comment article .comment-meta .comment-author .says {
         display: inline-block; }
   .comments-area .comment-list .comment.bypostauthor article {
-    border-top: solid 5px #f76e00;
-    border-bottom: solid 5px #f76e00; }
+    border: solid 5px #f76e00; }
   .comments-area .comment-list .children {
     list-style: none; }
 

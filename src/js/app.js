@@ -1,29 +1,29 @@
-var $ = require( 'jquery' );
+import $ from "jquery";
+import Foundation from "foundation-sites";
 
-import MotionUI from 'motion-ui';
+const scrollTopButton = $(".scroll-to-top");
 
-import Foundation from 'foundation-sites';
+$(document).foundation();
 
-var scrollTopButton = $( '.scroll-to-top' );
+$(document).ready(function() {
+  scrollTopButton.hide();
+  $(".jetpack-portfolio-shortcode").addClass("grid-x grid-margin-x");
+});
 
-$( document ).foundation();
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 100) {
+    scrollTopButton.fadeIn();
+  } else {
+    scrollTopButton.fadeOut();
+  }
+});
 
-$( document ).ready( function() {
-    scrollTopButton.hide();
-    $( '.jetpack-portfolio-shortcode' ).addClass( 'grid-x grid-margin-x' );
-} );
-
-$( window ).scroll( function() {
-    if ( $( this ).scrollTop() > 100 ) {
-        scrollTopButton.fadeIn();
-    } else {
-        scrollTopButton.fadeOut();
-    }
-} );
-
-scrollTopButton.on( 'click', function() {
-    $( "html, body" ).animate( {
-        scrollTop: 0
-    }, "slow" );
-    return false;
-} );
+scrollTopButton.on("click", function() {
+  $("html, body").animate(
+    {
+      scrollTop: 0
+    },
+    "slow"
+  );
+  return false;
+});
