@@ -18,8 +18,10 @@
  */
 function beercan_custom_header_setup() {
 	add_theme_support(
-		'custom-header', apply_filters(
-			'beercan_custom_header_args', array(
+		'custom-header',
+		apply_filters(
+			'beercan_custom_header_args',
+			array(
 				'default-image'      => '',
 				'default-text-color' => '000000',
 				'width'              => 1000,

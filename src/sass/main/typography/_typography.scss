@@ -1,13 +1,12 @@
-body,
 button,
 input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $body-font-family;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+	// color: $body-font-color;
+	// font-family: $body-font-family;
+	// @include font-size(1);
+	// line-height: $global-lineheight;
 }
 
 @import "headings";

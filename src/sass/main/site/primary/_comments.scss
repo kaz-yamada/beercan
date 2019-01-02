@@ -1,84 +1,34 @@
 .comment-content a {
   word-wrap: break-word;
 }
-
 .bypostauthor {
   display: block;
 }
 
 .comments-area {
   .comment-list {
-    margin: 1em 0;
-    list-style-type: none;
+    margin: 0 1em;
 
-    .comment {
-      article {
-        @include shadow-border(rgba(0, 0, 0, 0.5));
-        margin-bottom: 1em;
-        padding: 1em;
-
-        .comment-meta {
-          margin-bottom: 1em;
-
-          & > div {
-            height: 30px;
-          }
-
-          .comment-author {
-            img {
-              float: left;
-              margin-right: 1em;
-            }
-
-            .fn,
-            .says {
-              display: inline-block;
-            }
-          }
-        }
-      }
-
-      &.bypostauthor {
-        article {
-          border: solid 5px $color__link;
-        }
-      }
+    .comment,
+    .pingback {
+      margin-bottom: 1em;
     }
 
-    .children {
-      list-style: none;
+    .nested-comment {
+      margin-left: 1em;
+      margin-top: 1em;
     }
   }
-  @include breakpoint(small down) {
-    .comment-list {
-      .comment {
-        article {
-          .comment-meta {
-            height: auto;
-            text-align: center;
 
-            .comment-author {
-              height: auto;
-              text-align: center;
+  .comment-author {
+    img {
+      border-radius: 50%;
+    }
+  }
 
-              img {
-                float: none;
-                margin: 0 auto 1em;
-                display: block;
-              }
-
-              .fn,
-              .says {
-                display: inline-block;
-              }
-            }
-
-            .comment-metadata {
-              height: auto;
-            }
-          }
-        }
-      }
+  .form-submit {
+    .submit {
+      @extend .button;
     }
   }
 }

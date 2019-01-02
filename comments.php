@@ -28,14 +28,15 @@ if ( post_password_required() ) {
 			if ( 1 === $comment_count ) {
 				printf(
 					/* translators: 1: title. */
-						esc_html_e( 'One comment on &ldquo;%1$s&rdquo;', 'beercan' ), '<span>' . get_the_title() . '</span>'
+						esc_html_e( 'One comment on &ldquo;%1$s&rdquo;', 'beercan' ),
+					'<span>' . get_the_title() . '</span>'
 				);
 			} else {
 				printf( // WPCS: XSS OK.
 						/* translators: 1: comment count number, 2: title. */
 						esc_html( _nx( '%1$s comments on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'beercan' ) ),
-						number_format_i18n( $comment_count ),
-						'<span>' . get_the_title() . '</span>'
+					number_format_i18n( $comment_count ),
+					'<span>' . get_the_title() . '</span>'
 				);
 			}
 			?>
@@ -47,9 +48,11 @@ if ( post_password_required() ) {
 			<?php
 			wp_list_comments(
 				array(
-					'style'       => 'ol',
+					'style'       => 'div',
 					'short_ping'  => true,
 					'avatar_size' => 60,
+					'callback'    => 'beercan_comment_callback',
+					// 'walker'      => new beercan_comment_walker(),
 				)
 			);
 			?>
@@ -66,5 +69,5 @@ if ( post_password_required() ) {
 	endif; // Check for have_comments().
 
 	comment_form();
-	?>
+?>
 </div><!-- #comments -->

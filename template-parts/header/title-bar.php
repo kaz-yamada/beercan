@@ -8,11 +8,11 @@
  */
 
 ?>
-<header class="page-title-bar">
-	<div class='title-bar-content'>
+<header class="page-title-bar grid-container grid-padding-y">
+	<div class='title-bar-content cell'>
 		<?php
-		beercan_get_post_title( '<h1 class="page-title">', '</h1>' );
-		echo '<h2 class="page-subtitle">' . esc_html( beercan_post_subtitle() ) . '</h2>';
+		beercan_get_post_title( 'h1', 'page-title' );
+        beercan_post_subtitle();
 		?>
 	</div><!--.title-bar-content -->
 </header><!-- .page-title-bar -->

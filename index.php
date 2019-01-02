@@ -17,10 +17,10 @@ get_header();
 <div id="content-inner" class="grid-container blog-loop">
 	<div class="grid-x grid-padding-x grid-padding-y">
 		<div id="primary" class="content-area cell auto">
-			<main id="main" class="site-main grid-x grid-margin-x large-up-3 medium-up-2">
+			<main id="main" class="site-main">
+				<div class="grid-y grid-margin-x grid-margin-y">
 				<?php
 				if ( have_posts() ) :
-
 					/* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
@@ -30,11 +30,9 @@ get_header();
 					get_template_part( 'template-parts/post/content', 'none' );
 				endif;
 				?>
-
+				</div>				
 				<div class="grid-container pagination-wrapper">
-					<?php
-					beercan_posts_pagination();
-					?>
+					<?php beercan_posts_pagination(); ?>
 				</div>
 			</main><!-- #main -->
 		</div><!-- #primary -->
