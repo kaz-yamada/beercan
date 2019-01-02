@@ -18,7 +18,7 @@ if ( ! function_exists( 'beercan_get_post_title' ) ) :
 	 *
 	 * @return string title of the post.
 	 */
-	function beercan_get_post_title( $before = '<h1>', $after = '</h1>', $echo = true ) {
+	function beercan_get_post_title( $tag = 'h1', $classes = 'post-title', $echo = true ) {
 
 		$title = get_the_title();
 
@@ -34,7 +34,7 @@ if ( ! function_exists( 'beercan_get_post_title' ) ) :
 		endif;
 
 		if ( $echo ) {
-			echo $before . esc_html( $title ) . $after;
+			echo sprintf( '<' . $tag . " class='" . $classes . "'>%s</" . $tag . '>', $title );
 			return;
 		}
 
@@ -61,7 +61,11 @@ if ( ! function_exists( 'beercan_post_date' ) ) :
 		$date_format = 'd M, Y';
 
 		$post_time = sprintf(
-			$time_string, esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date( $date_format ) ), esc_attr( get_the_modified_date( 'c' ) ), esc_html( get_the_modified_date() )
+			$time_string,
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date( $date_format ) ),
+			esc_attr( get_the_modified_date( 'c' ) ),
+			esc_html( get_the_modified_date() )
 		);
 
 		return $post_time;
@@ -127,13 +131,14 @@ if ( ! function_exists( 'beercan_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
-	function beercan_posted_on() {
+	function beercan_posted_on( $display_author = true, $date_format = '' ) {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 		}
+
 		$time_string = sprintf(
-			 $time_string,
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -143,22 +148,30 @@ if ( ! function_exists( 'beercan_posted_on' ) ) :
 		if ( ! is_single() ) {
 			$posted_on = sprintf(
 				/* translators: %s: post date. */
-				esc_html( '%s' ), '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+				esc_html( '%s' ),
+				'<span class="posted-on"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a></span>'
 			);
 		} else {
-			$posted_on = $time_string;
+			$posted_on = sprintf(
+				'<span class="posted-on">%s</span>',
+				$time_string
+			);
 		}
 
-		$author_id   = intval( get_post_field( 'post_author', get_the_ID() ) );
-		$author_name = get_the_author_meta( 'display_name', $author_id );
+		$byline = '';
 
-		$byline = sprintf(
-			/* translators: %s: post author. */
-			esc_html( '%s' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( $author_name ) . '</a></span>'
-		);
+		if ( $display_author ) {
+			$author_id   = intval( get_post_field( 'post_author', get_the_ID() ) );
+			$author_name = get_the_author_meta( 'display_name', $author_id );
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+			$byline = sprintf(
+				/* translators: %s: post author. */
+				'<span class="byline">' . esc_html( '%s' ) . '</span>',
+				'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( $author_name ) . '</a></span>'
+			);
+		}
+
+		echo $posted_on . $byline;
 
 		$comments_count = get_comments_number();
 
@@ -205,37 +218,50 @@ if ( ! function_exists( 'beercan_post_thumbnail' ) ) :
 	 * @param boolean $display true to echo the thumbnail, false to return.
 	 * @param boolean $placeholder true to add a placeholder if there is no thumnail, false if other.
 	 */
-	function beercan_post_thumbnail( $display = true, $placeholder = true ) {
+	function beercan_post_thumbnail( $display = true, $placeholder = true, $link = true ) {
 		?>
-		<div class='featured-image cell'>
+		<div class='featured-image cell small-2'>
 			<figure>
 				<?php
-				echo '<a href="' . esc_html( get_the_permalink() ) . '">';
+				$thumbnail = '';
+
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail();
+					// the_post_thumbnail();
+					$thumbnail = get_the_post_thumbnail();
 				} elseif ( $placeholder ) {
 					$format = get_post_format();
+					$icon   = 'dashicons dashicons-';
+
 					if ( 'video' === $format ) {
-						echo '<i class="dashicons dashicons-video-alt" aria-hidden="true"></i>';
+						$icon .= 'video-alt';
 					} elseif ( 'audio' === $format ) {
-						echo '<i class="dashicons dashicons-format-audio" aria-hidden="true"></i>';
+						$icon .= 'format-audio';
 					} elseif ( 'image' === $format ) {
-						echo '<i class="dashicons dashicons-format-image" aria-hidden="true"></i>';
+						$icon .= 'format-image';
 					} elseif ( 'gallery' === $format ) {
-						echo '<i class="dashicons dashicons-format-gallery" aria-hidden="true"></i>';
+						$icon .= 'format-gallery';
 					} elseif ( 'link' === $format ) {
-						echo '<i class="dashicons dashicons-admin-links" aria-hidden="true"></i>';
+						$icon .= 'admin-links';
 					} elseif ( 'quote' === $format ) {
-						echo '<i class="dashicons dashicons-format-quote" aria-hidden="true"></i>';
+						$icon .= 'format-quote';
 					} elseif ( 'chat' === $format ) {
-						echo '<i class="dashicons dashicons-format-chat" aria-hidden="true"></i>';
+						$icon .= 'format-chat';
 					} elseif ( 'status' === $format ) {
-						echo '<i class="dashicons dashicons-format-status" aria-hidden="true"></i>';
+						$icon .= 'format-status';
 					} else {
-						echo '<i class="fa fa-file-text" aria-hidden="true"></i>';
+						$icon = 'fa fa-file-text';
 					}
+					$thumbnail = "<i class='" . $icon . "' aria-hidden='true'></i>";
 				}
-				echo '</a>';
+
+				if ( $link ) {
+					echo sprintf(
+						'<a href="' . esc_html( get_the_permalink() ) . '">%s</a>',
+						$thumbnail
+					);
+				} else {
+					echo $thumbnail;
+				}
 				?>
 			</figure>
 		</div>
@@ -273,18 +299,20 @@ if ( ! function_exists( 'beercan_posts_pagination' ) ) :
 	 * Displays the posts pagination.
 	 */
 	function beercan_posts_pagination() {
-		$args = array(
-			'current'  => max( 1, get_query_var( 'paged' ) ),
-			'show_all' => true,
-			'type'     => 'list',
-		);
+		if ( have_posts() ) {
+			$args = array(
+				'current'  => max( 1, get_query_var( 'paged' ) ),
+				'show_all' => true,
+				'type'     => 'list',
+			);
 
-		the_posts_pagination( $args );
+			the_posts_pagination( $args );
+		}
 	}
 
 endif;
 
- if ( ! function_exists( 'beercan_post_subtitle' ) ) :
+if ( ! function_exists( 'beercan_post_subtitle' ) ) :
 	/**
 	 * Displays the post's subtitle.
 	 */
@@ -323,22 +351,24 @@ if ( ! function_exists( 'bearcan_read_more' ) ) :
 endif;
 
 if ( ! function_exists( 'beercan_edit_link' ) ) :
-/**
- * Displays the edit post link
- */
-function beercan_edit_link() {
+	/**
+	 * Displays the edit post link
+	 */
+	function beercan_edit_link() {
 		edit_post_link(
-		sprintf(
-			wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'beercan' ), array( 'span' => array( 'class' => array( 'button' ) ) )
-			), get_the_title()
-		),
-		'<span class="edit-link">',
-		'</span>',
-		'',
-		'button'
-			);
+			sprintf(
+				wp_kses(
+					/* translators: %s: Name of current post. Only visible to screen readers */
+					__( 'Edit <span class="screen-reader-text">%s</span>', 'beercan' ),
+					array( 'span' => array( 'class' => array( 'button' ) ) )
+				),
+				get_the_title()
+			),
+			'<span class="edit-link">',
+			'</span>',
+			'',
+			'button'
+		);
 	}
 endif;
 
@@ -371,11 +401,11 @@ if ( ! function_exists( 'beercan_no_header' ) ) {
 	 * Checks if the page template should have a header.
 	 */
 	function beercan_no_header() {
-		 if ( get_page_template_slug() == 'page-templates/page-no-header.php' ) {
+		if ( get_page_template_slug() == 'page-templates/page-no-header.php' ) {
 			return true;
-		 } elseif ( get_page_template_slug() == 'page-templates/page-no-header-full.php' ) {
+		} elseif ( get_page_template_slug() == 'page-templates/page-no-header-full.php' ) {
 			return true;
-		 }
+		}
 
 		 return false;
 	}

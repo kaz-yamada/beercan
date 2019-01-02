@@ -11,9 +11,9 @@ get_header();
 ?>
 
 <div id="content-inner" class="grid-container">
-	<div class="grid-x grid-padding-x grid-padding-y grid-margin-x">
+	<div class="grid-x grid-padding-y grid-margin-x">
 		<div id="primary" class="content-area cell auto">
-			<main id="main" class="site-main grid-x grid-padding-y grid-margin-x grid-margin-y large-up-2">
+			<main id="main" class="site-main grid-y grid-padding-y grid-margin-x grid-margin-y">
 				<?php
 				if ( have_posts() ) :
 					/* Start the Loop */

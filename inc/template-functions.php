@@ -13,9 +13,9 @@
  */
 function beercan_body_classes( $classes ) {
 		// Adds a class of hfeed to non-singular pages.
-		if ( ! is_singular() ) {
-			$classes[] = 'hfeed';
-		}
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
 
 		return $classes;
 }
@@ -26,9 +26,9 @@ add_filter( 'body_class', 'beercan_body_classes' );
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
 function beercan_pingback_header() {
-		if ( is_singular() && pings_open() ) {
-			echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-			}
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+	}
 }
 
 add_action( 'wp_head', 'beercan_pingback_header' );
@@ -76,13 +76,13 @@ function beercan_limit_comment_length( $comment ) {
 		$max_length = 5000;
 		$min_length = 10;
 
-		if ( strlen( $comment['comment_content'] ) > $max_length ) {
-			wp_die( 'Comment is too long. Please keep your comment under ' . esc_js( $max_length ) . ' characters.' );
-			}
+	if ( strlen( $comment['comment_content'] ) > $max_length ) {
+		wp_die( 'Comment is too long. Please keep your comment under ' . esc_js( $max_length ) . ' characters.' );
+	}
 
-		if ( strlen( $comment['comment_content'] ) < $min_length ) {
-			wp_die( 'Comment is too short. Please use at least ' . esc_js( $min_length ) . ' characters.' );
-			}
+	if ( strlen( $comment['comment_content'] ) < $min_length ) {
+		wp_die( 'Comment is too short. Please use at least ' . esc_js( $min_length ) . ' characters.' );
+	}
 
 		return $comment;
 }
@@ -139,7 +139,7 @@ add_action( 'beercan_do_header', 'beercan_header_content' );
  * Function to display page/post title bar
  */
 function beercan_page_header_title() {
-		get_template_part( 'template-parts/header/title-bar' );
+	get_template_part( 'template-parts/header/title-bar' );
 }
 
 add_action( 'beercan_header_title', 'beercan_page_header_title' );

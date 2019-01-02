@@ -15,23 +15,25 @@ get_header();
 		<div id="primary" class="content-area cell auto">
 			<main id="main" class="site-main grid-container grid-padding-x grid-padding-y grid-margin-y">
 				<?php
-				while ( have_posts() ) :
+					while ( have_posts() ) :
 					the_post();
 
-					get_template_part( 'template-parts/post/content', get_post_format() );
+					get_template_part( 'template-parts/post/content-single', get_post_format() );
 					?>
 					<div class="cell">
-						<?php
-						the_post_navigation( array(
-							'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i> %title',
-							'next_text' => '%title <i class="fa fa-chevron-right" aria-hidden="true"></i>',
-						) );
-						?>
-					</div>
 					<?php
+					the_post_navigation(
+					array(
+						'prev_text' => '<i class="fa fa-chevron-left" aria-hidden="true"></i> %title',
+						'next_text' => '%title <i class="fa fa-chevron-right" aria-hidden="true"></i>',
+					)
+				);
+				?>
+					</div>
+				<?php
 					// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
-						comments_template();
+							comments_template();
 					endif;
 				endwhile; // End of the loop.
 				?>

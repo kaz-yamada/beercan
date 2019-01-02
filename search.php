@@ -8,37 +8,37 @@
  */
 
 get_header();
-
-get_template_part( 'template-parts/header/title-bar' );
 ?>
 <div id="content-inner" class="grid-container">
 	<div class="grid-x grid-padding-x grid-padding-y" >
 		<section id="primary" class="content-area cell auto">
-			<main id="main" class="site-main">
+			<main id="main" class="site-main grid-y grid-margin-y">
 				<?php if ( have_posts() ) : ?>
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
-						the_post();
+						// the_post();
 
 						/**
 						 * Run the loop for the search to output the results.
 						 * If you want to overload this in a child theme then include a file
 						 * called content-search.php and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content', 'search' );
+						the_post();
+						get_template_part( 'template-parts/post/content-search' );
 
 					endwhile;
+					?>
+					<div class="grid-container pagination-wrapper">
+						<?php beercan_posts_pagination(); ?>
+					</div>
 
-					the_posts_navigation();
-
-				else :
-
-					get_template_part( 'template-parts/content', 'none' );
-
-				endif;
-				?>
-
+					<?php
+					else :
+						echo 'No results';
+						get_template_part( 'template-parts/post/content', 'none' );
+					endif;
+					?>
 			</main><!-- #main -->
 		</section><!-- #primary -->
 

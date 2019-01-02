@@ -1,10 +1,31 @@
+/*!
+Theme Name: beercan
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: beercan
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+beercan is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
-# Fonts
-# Font Awesome
-# Zurb Foundation
-# Variables and Mixins
+# Normalize
+# Foundation
+# Variables & mixins
 # Typography
 # Elements
 # Forms
@@ -16,75 +37,83 @@
 # Clearings
 # Widgets
 # Content
-	## Posts and pages
-	## Comments
+    ## Posts and pages
+    ## Header
+    ## Comments
+    ## Footer
+    ## Misc
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-# Zurb Foundation
+# Normalize
 --------------------------------------------------------------*/
-@import 'foundation';
+@import "./normalize";
 
 /*--------------------------------------------------------------
-# Variables and Mixins
+# Foundation
 --------------------------------------------------------------*/
-@import "mixins/mixins-master";
-@import "variables-site/variables-site";
+@import "./foundation/foundation";
+
+/*--------------------------------------------------------------
+# Variables & mixins
+--------------------------------------------------------------*/
+@import "./variables-site/variables-site";
+@import "./mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-// @import "typography/typography";
+@import "./typography/typography";
 
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
-@import "elements/elements";
+@import "./elements/elements";
 
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-@import "forms/forms";
+@import "./forms/forms";
 
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-@import "navigation/navigation";
+@import "./navigation/navigation";
 
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-@import "modules/accessibility";
+@import "./modules/accessibility";
 
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
-@import "modules/alignments";
+@import "./modules/alignments";
 
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-@import "modules/clearings";
+@import "./modules/clearings";
 
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-@import "site/secondary/widgets";
+@import "./site/secondary/widgets";
 
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
-@import "site/site";
+@import "./site/site";
 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-@import "modules/infinite-scroll";
+@import "./modules/infinite-scroll";
 
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-@import "media/media";
+@import "./media/media";

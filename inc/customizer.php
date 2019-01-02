@@ -19,13 +19,15 @@ function beercan_customize_register( $wp_customize ) {
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial(
-			'blogname', array(
+			'blogname',
+			array(
 				'selector'        => '.site-title a',
 				'render_callback' => 'beercan_customize_partial_blogname',
 			)
 		);
 		$wp_customize->selective_refresh->add_partial(
-			'blogdescription', array(
+			'blogdescription',
+			array(
 				'selector'        => '.site-description',
 				'render_callback' => 'beercan_customize_partial_blogdescription',
 			)

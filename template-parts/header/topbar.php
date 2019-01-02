@@ -6,27 +6,26 @@
  */
 
 ?>
-<div id="site-navigation" class="sticky-container" data-sticky-container>
-	<nav class="main-navigation top-bar sticky" data-sticky data-options="marginTop: 0; stickyOn: small;">
+<div id="site-navigation" class="">
+	<div class="title-bar" data-responsive-toggle="main-navigation" data-hide-for="medium" >
+		<button id="main-navigation-button" class="menu-icon" data-toggle="main-navigation" type="button" >
+		</button>
+	</div>
+	<div id="main-navigation" class="top-bar">
 		<div class="top-bar-left">
-			<h4 class="site-title menu"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h4>
+			<div class="site-title menu"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
 		</div>
 		<div class="top-bar-right">
-		<div class="menu-toggle-wrapper hide-for-large">
-			<button id="primary-menu-toggle" class="menu-toggle" type="button" aria-expanded="false">
-				<span class="menu-toggle-icon"></span>
-			</button>
-		</div>
 			<?php
 			wp_nav_menu(
 				array(
-					'theme_location'  => 'top-menu',
-					'menu_id'         => 'primary-menu',
-					'menu_class'      => 'menu vertical large-horizontal fast',
-					'container_id'    => 'nav-container',
+					'theme_location' => 'top-menu',
+					'container'      => '',
+					'items_wrap'     => '<ul id="primary-menu" class="%2$s vertical medium-horizontal" data-submenu-toggle="true" data-responsive-menu="accordion medium-dropdown">%3$s</ul>',
+					'walker'         => new Foundation_Nav_Walker(),
 				)
 			);
 			?>
 		</div><!--.top-bar-right-->
-	</nav><!--.main-navigation-->
+	</div><!--#main-navigation-->
 </div><!-- #site-navigation -->

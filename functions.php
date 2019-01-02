@@ -18,29 +18,29 @@ if ( ! function_exists( 'beercan_setup' ) ) :
 	 */
 	function beercan_setup() {
 		/*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory.
-         * If you're building a theme based on Beercan, use a find and replace
-         * to change 'beercan' to the name of your theme in all the template files.
-         */
+		 * Make theme available for translation.
+		 * Translations can be filed in the /languages/ directory.
+		 * If you're building a theme based on Beercan, use a find and replace
+		 * to change 'beercan' to the name of your theme in all the template files.
+		 */
 		load_theme_textdomain( 'beercan', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
 		/*
-         * Let WordPress manage the document title.
-         * By adding theme support, we declare that this theme does not use a
-         * hard-coded <title> tag in the document head, and expect WordPress to
-         * provide it for us.
-         */
+		 * Let WordPress manage the document title.
+		 * By adding theme support, we declare that this theme does not use a
+		 * hard-coded <title> tag in the document head, and expect WordPress to
+		 * provide it for us.
+		 */
 		add_theme_support( 'title-tag' );
 
 		/*
-         * Enable support for Post Thumbnails on posts and pages.
-         *
-         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-         */
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -51,11 +51,12 @@ if ( ! function_exists( 'beercan_setup' ) ) :
 		);
 
 		/*
-            * Switch default core markup for search form, comment form, and comments
-            * to output valid HTML5.
-            */
+			* Switch default core markup for search form, comment form, and comments
+			* to output valid HTML5.
+			*/
 		add_theme_support(
-			'html5', array(
+			'html5',
+			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -66,8 +67,10 @@ if ( ! function_exists( 'beercan_setup' ) ) :
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
-			'custom-background', apply_filters(
-				'beercan_custom_background_args', array(
+			'custom-background',
+			apply_filters(
+				'beercan_custom_background_args',
+				array(
 					'default-color' => '0a0a0a',
 					'default-image' => '',
 				)
@@ -83,7 +86,8 @@ if ( ! function_exists( 'beercan_setup' ) ) :
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
 		add_theme_support(
-			'custom-logo', array(
+			'custom-logo',
+			array(
 				'height'      => 250,
 				'width'       => 250,
 				'flex-width'  => true,
@@ -174,7 +178,7 @@ add_action( 'widgets_init', 'beercan_widgets_init' );
  */
 function beercan_enqueue_style() {
 	wp_enqueue_style( 'dashicons' );
-	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/main.css' );
+	wp_enqueue_style( 'beercan-style', get_stylesheet_directory_uri() . '/dist/main.css', null, '2.0' );
 }
 
 add_action( 'wp_enqueue_scripts', 'beercan_enqueue_style' );
@@ -188,7 +192,9 @@ function beercan_scripts() {
 	wp_enqueue_script( 'beercan-bundle', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', true );
 
 	wp_localize_script(
-		'beercan-bundle', 'screenReaderText', array(
+		'beercan-bundle',
+		'screenReaderText',
+		array(
 			'expand'   => __( 'expand child menu', 'beercan' ),
 			'collapse' => __( 'collapse child menu', 'beercan' ),
 		)
@@ -202,14 +208,39 @@ function beercan_scripts() {
 add_action( 'wp_enqueue_scripts', 'beercan_scripts' );
 
 /**
+ * Add hook to execute code after header.php.
+ */
+function beercan_after_header_hook() {
+	do_action( 'beercan_after_header' );
+}
+
+
+
+/**
+ * Advanced custom fields
+ */
+require get_template_directory() . '/inc/acf.php';
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
 
+
 /**
- * Include theme hooks.
+ * Customizer additions.
  */
-require get_template_directory() . '/inc/hooks.php';
+require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Get the custom nav menu walker
+ */
+require get_template_directory() . '/inc/class-foundation-nav-walker.php';
+
+/**
+ * Get custom comment callback.
+ */
+require get_template_directory() . '/inc/beercan-comment-callback.php';
 
 /**
  * Custom template tags for this theme.
@@ -220,13 +251,6 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
-
-require get_template_directory() . '/inc/acf.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

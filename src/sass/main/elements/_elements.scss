@@ -1,55 +1,38 @@
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
 }
 
 body {
-	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
-	// @include linear-gradient(to bottom, $color__background-body, $color__background-light);
-	min-height: 100vh;
+  background: $body-background; /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-	background-color: $color__background-hr;
-	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
-}
-
-pre {
-	background-color: $color__background-body;
-	color: $color__text-screen;
-	border: solid 1px $color__text-screen;
-	padding: 0.5em;
-	margin-bottom: 0.5em;
-	position: relative;
-	z-index: 333;
-}
-
-code {
-	display: inline-block;
+  background-color: $body-font-color;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
 
 @import "lists";
 
 img {
-	height: auto; /* Make sure images are scaled correctly. */
-	max-width: 100%; /* Adhere to container width. */
-}
-
-blockquote {
-	p, & {
-		color: $color__text-input;
-	}
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
 }
 
 figure {
-	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+  margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+code {
+  display: inline-block;
 }
 
 @import "tables";
