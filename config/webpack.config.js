@@ -3,9 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 const sassRule = require("./rules/sass");
-// const cssRule = require("./rules/css");
 const fontsRule = require("./rules/fonts");
-// const imagesRule = require( './rules/images' );
 const javascriptRule = require("./rules/javascript");
 
 const PATHS = {

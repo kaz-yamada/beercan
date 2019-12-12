@@ -27,7 +27,7 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "^2.2.2",
     "css-loader": "^2.0.1",
     "file-loader": "^2.0.0",
@@ -46,7 +46,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "foundation-sites": "^6.5.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "motion-ui": "^2.0.3",
     "prismjs": "^1.15.0"
   }
