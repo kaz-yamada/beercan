@@ -48,6 +48,6 @@
     "foundation-sites": "^6.5.1",
     "jquery": "^3.4.1",
     "motion-ui": "^2.0.3",
-    "prismjs": "^1.15.0"
+    "prismjs": "^1.23.0"
   }
 }
